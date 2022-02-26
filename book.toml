@@ -1,0 +1,9 @@
+[book]
+language = "en"
+multilingual = false
+title = "nekos.best API"
+description = "The official nekos.best API documentation."
+
+[output.html]
+git-repository-icon = "fa-github"
+git-repository-url = "https://github.com/nekos-best/docs"

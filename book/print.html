@@ -1,0 +1,508 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>nekos.best API</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The official nekos.best API documentation.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="examples/unofficial/index.html"><strong aria-hidden="true">4.1.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="examples/unofficial/bdfd.html"><strong aria-hidden="true">4.1.1.</strong> BDFD</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="legal/terms.html"><strong aria-hidden="true">5.</strong> Terms and Conditions</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">nekos.best API</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/nekos-best/docs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>Welcome to <a href="https://nekos.best">nekos.best</a>'s official documentation.</p>
+<hr />
+<h2 id="about-us"><a class="header" href="#about-us">About us</a></h2>
+<p><a href="https://nekos.best">nekos.best</a> is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">RESTful</a> API serving fully SFW and high quality anime images and GIFs.</p>
+<p>We focus on giving the best experience for our users and their projects, for free.</p>
+<h2 id="why-nekosbest"><a class="header" href="#why-nekosbest">Why nekos.best?</a></h2>
+<p>6 reasons to switch to us:</p>
+<ol>
+<li>
+<p>Our API is fully SFW. You will never worry about NSFW/lewd images.</p>
+</li>
+<li>
+<p>Organized assets. Images and GIFs are separated based by their category.</p>
+</li>
+<li>
+<p>Fast response times and 99.9% uptime. For projects that stability and performance matters.</p>
+</li>
+<li>
+<p>CORS is enabled for those who want to use our collection on their websites.</p>
+</li>
+<li>
+<p>Crediting creators of their work is very important for us. That's why you get everything you need about the origin of the images and GIFs.</p>
+</li>
+<li>
+<p>We listen to our community and their feedback.</p>
+</li>
+</ol>
+<h2 id="do-you-need-help-do-you-have-any-suggestions-or-feedback"><a class="header" href="#do-you-need-help-do-you-have-any-suggestions-or-feedback">Do you need help? Do you have any suggestions or feedback?</a></h2>
+<p>Join our <a href="https://nekos.best/discord?ref=docs">Discord Server</a> if you need any help.</p>
+<p>We accept suggestions and feedback in the <a href="https://nekos.best/discord?ref=docs">Discord Server</a> and via email <a href="mailto:contact@nekos.best">contact@nekos.best</a>.</p>
+<h2 id="official-links"><a class="header" href="#official-links">Official links</a></h2>
+<p><a href="https://nekos.best/discord?ref=docs">Discord Server</a> ・ <a href="https://status.nekos.best">API Status</a> ・ <a href="https://patreon.com/nekos_best">Patreon</a> ・ <a href="https://github.com/nekos-best">GitHub</a></p>
+<div style="break-before: page; page-break-before: always;"></div><!-- markdownlint-disable MD028 -->
+<h1 id="reference"><a class="header" href="#reference">Reference</a></h1>
+<hr />
+<h2 id="base-url"><a class="header" href="#base-url">Base URL</a></h2>
+<p>Our base URL is <code>https://nekos.best/api/:version</code>. Replace <code>:version</code> with one of the <a href="api/reference.html#versions">available versions below</a>.</p>
+<h2 id="versions"><a class="header" href="#versions">Versions</a></h2>
+<table><thead><tr><th>Version</th><th>Status</th></tr></thead><tbody>
+<tr><td>v1</td><td>Deprecated</td></tr>
+<tr><td><strong>v2</strong></td><td>Current</td></tr>
+</tbody></table>
+<h2 id="categories"><a class="header" href="#categories">Categories</a></h2>
+<h3 id="images-png"><a class="header" href="#images-png">Images (<code>.png</code>)</a></h3>
+<p><code>kitsune</code>, <code>neko</code></p>
+<h3 id="gifs-gif"><a class="header" href="#gifs-gif">GIFs (<code>.gif</code>)</a></h3>
+<p><code>baka</code>, <code>bite</code>, <code>blush</code>, <code>bored</code>, <code>cry</code>, <code>cuddle</code>, <code>dance</code>, <code>facepalm</code>, <code>feed</code>, <code>happy</code>, <code>highfive</code>, <code>hug</code>, <code>kiss</code>, <code>laugh</code>, <code>pat</code>, <code>poke</code>, <code>pout</code>, <code>shrug</code>, <code>slap</code>, <code>sleep</code>, <code>smile</code>, <code>smug</code>, <code>stare</code>, <code>think</code>, <code>thumbsup</code>, <code>tickle</code>, <code>wave</code>, <code>wink</code></p>
+<div style="break-before: page; page-break-before: always;"></div><!-- markdownlint-disable MD028 -->
+<h1 id="endpoints"><a class="header" href="#endpoints">Endpoints</a></h1>
+<hr />
+<h2 id="get-endpoints"><a class="header" href="#get-endpoints">GET <code>/endpoints</code></a></h2>
+<p>Lists all available categories along with their limits.</p>
+<blockquote>
+<p><strong>Example:</strong> <a href="https://nekos.best/api/v2/endpoints">https://nekos.best/api/v2/endpoints</a></p>
+<p><strong>Returns:</strong></p>
+<pre><code class="language-json">{
+    &quot;neko&quot;: {&quot;min&quot;: &quot;0001&quot;, &quot;max&quot;: &quot;0577&quot;, &quot;format&quot;: &quot;png&quot;},
+    ···,
+    &quot;wink&quot;: {&quot;min&quot;: &quot;001&quot;, &quot;max&quot;: &quot;015&quot;, &quot;format&quot;: &quot;gif&quot;}
+}
+</code></pre>
+</blockquote>
+<h2 id="get-categoryamountx"><a class="header" href="#get-categoryamountx">GET <code>/:category?amount=X</code></a></h2>
+<p>Gets a random image or GIF from the available <a href="api/reference.html#categories">categories</a> along with its metadata.</p>
+<p>The amount query may be used to retrieve multiple assets at once. The amount is a number such that <code>1 ≤ X ≤ 20</code>.</p>
+<blockquote>
+<p><strong>Example:</strong> <a href="https://nekos.best/api/v2/neko">https://nekos.best/api/v2/neko</a></p>
+<p><strong>Returns:</strong></p>
+<pre><code class="language-json">{
+   &quot;results&quot;: [{
+       &quot;source_url&quot;: &quot;https://www.pixiv.net/en/artworks/79872328&quot;,
+       &quot;artist_href&quot;: &quot;https://www.pixiv.net/en/users/5768971&quot;,
+       &quot;artist_name&quot;: &quot;jimmy&quot;,
+       &quot;url&quot;: &quot;https://nekos.best/api/v2/neko/0238.png&quot;
+   }]
+}
+</code></pre>
+</blockquote>
+<blockquote>
+<p><strong>Example:</strong> <a href="https://nekos.best/api/v2/hug?amount=2">https://nekos.best/api/v2/hug?amount=2</a></p>
+<p><strong>Returns:</strong></p>
+<pre><code class="language-json">{
+    &quot;results&quot;: [
+        {
+            &quot;url&quot;: &quot;https://neko.best/api/v2/hug/018.gif&quot;,
+            &quot;anime_name&quot;: &quot;Darker Than Black: Ryuusei no Gemini&quot;
+        },
+        {
+            &quot;url&quot;: &quot;https://neko.best/api/v2/hug/016.gif&quot;,
+            &quot;anime_name&quot;: &quot;Nakitai Watashi wa Neko o Kaburu&quot;
+        }
+    ]
+}
+</code></pre>
+</blockquote>
+<h2 id="get-categoryfilenameformat"><a class="header" href="#get-categoryfilenameformat">GET <code>/:category/:filename.:format</code></a></h2>
+<p>Gets a specific image from our categories. Replace <code>:filename</code> with the asset's filename and <code>:format</code> with the category's format.</p>
+<p><strong>Note:</strong> The asset's metadata are provided URL-encoded, in the response's headers under <code>details</code>.</p>
+<blockquote>
+<p><strong>Example:</strong> <a href="https://nekos.best/api/v2/hug/001.gif">https://nekos.best/api/v2/hug/001.gif</a></p>
+<p><strong>Returns:</strong> <em>Binary data</em></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-javascript"><a class="header" href="#using-javascript">Using JavaScript</a></h1>
+<p>The source code is available at <a href="https://github.com/nekos-best/nekos-best.js">GitHub</a> ・ Made by <a href="https://github.com/Thunder04">Thunder04</a></p>
+<p><a href="https://www.npmjs.com/package/nekos-best.js"><img src="https://img.shields.io/npm/v/nekos-best.js?color=red&amp;logo=npm&amp;style=flat-square" alt="NekosBest" /></a> <a href="https://www.npmjs.com/package/nekos-best.js"><img src="https://img.shields.io/npm/dm/nekos-best.js?color=red&amp;logo=npm&amp;style=flat-square" alt="NekosBest" /></a> <a href="examples/github.com/nekos-best/nekos-best.js"><img src="https://img.shields.io/github/stars/nekos-best/nekos-best.js?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
+<hr />
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p><code>npm install nekos-best.js</code> | <code>yarn install nekos-best.js</code></p>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<h3 id="get-a-random-neko-image"><a class="header" href="#get-a-random-neko-image">Get a random neko image</a></h3>
+<h4 id="recommended-way"><a class="header" href="#recommended-way">Recommended way</a></h4>
+<pre><code class="language-js">import { Client } from &quot;nekos-best.js&quot;;
+
+const nekosBest = new Client();
+await nekosBest.init();
+
+console.log(await nekosBest.fetchRandom(&quot;neko&quot;)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/0138.png' }] }
+</code></pre>
+<h4 id="alternative-way"><a class="header" href="#alternative-way">Alternative way</a></h4>
+<pre><code class="language-js">import { fetchRandom } from &quot;nekos-best.js&quot;;
+
+console.log(await fetchRandom(&quot;neko&quot;)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/0247.png' }] }
+</code></pre>
+<h3 id="get-multiple-hug-gifs"><a class="header" href="#get-multiple-hug-gifs">Get multiple hug GIFs</a></h3>
+<pre><code class="language-js">import { Client } from &quot;nekos-best.js&quot;;
+
+const nekosBest = new Client();
+await nekosBest.init();
+
+console.log(await nekosBest.fetchMultiple(&quot;hug&quot;, 10)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/hug/019.gif' }, ···] }
+</code></pre>
+<h3 id="get-a-random-file"><a class="header" href="#get-a-random-file">Get a random file</a></h3>
+<pre><code class="language-js">import { Client } from &quot;nekos-best.js&quot;;
+
+const nekosBest = new Client();
+await nekosBest.init();
+
+console.log(await nekosBest.fetchFile(&quot;neko&quot;)); // { artist_href: '···', ···, data: &lt;Buffer&gt; }
+</code></pre>
+<h3 id="build-a-simple-discord-bot-with-discordjs"><a class="header" href="#build-a-simple-discord-bot-with-discordjs">Build a simple Discord Bot with <a href="https://www.npmjs.com/package/discord.js"><code>discord.js</code></a></a></h3>
+<pre><code class="language-js">import { Client as DiscordClient } from &quot;discord.js&quot;;
+import { Client } from &quot;nekos-best.js&quot;;
+
+const TOKEN = &quot;************************.******.***************************&quot;;
+
+const discordClient = new DiscordClient();
+const nekosBest = new Client();
+await nekosBest.init();
+
+discordClient.on(&quot;messageCreate&quot;, async (message) =&gt; {
+    if (message.author.bot) return;
+
+    if (message.content.startsWith('!neko')) {
+        message.channel.send((await nekosBest.fetchRandom(&quot;neko&quot;)).results[0].url);
+    }
+})
+
+discordClient.login(TOKEN);
+</code></pre>
+<h2 id="migrate-from-4xx"><a class="header" href="#migrate-from-4xx">Migrate from 4.X.X</a></h2>
+<h3 id="the-fetchnekocategory-function-has-been-removed-in-favor-of-the-clientfetchrandom-method-and-its-shortcut-fetchrandom"><a class="header" href="#the-fetchnekocategory-function-has-been-removed-in-favor-of-the-clientfetchrandom-method-and-its-shortcut-fetchrandom">The <code>fetchNeko(category)</code> function has been removed in favor of the <code>&lt;Client&gt;.fetchRandom()</code> method and its shortcut <code>fetchRandom()</code></a></h3>
+<pre><code class="language-diff">- fetchNeko('category')
++ const nekosBest = new Client();
++ 
++ nekosBest.fetchRandom('category')
+</code></pre>
+<pre><code class="language-diff">- fetchNeko('category')
++ fetchRandom('category')
+</code></pre>
+<h3 id="the-optional-parameter-amount-of-the-fetchneko-function-has-been-removed-in-favor-of-the-clientfetchmultiple-method"><a class="header" href="#the-optional-parameter-amount-of-the-fetchneko-function-has-been-removed-in-favor-of-the-clientfetchmultiple-method">The optional parameter <code>amount</code> of the <code>fetchNeko()</code> function has been removed in favor of the <code>&lt;Client&gt;.fetchMultiple()</code> method</a></h3>
+<pre><code class="language-diff">- fetchNeko('category', 15)
++ const nekosBest = new Client();
++ 
++ nekosBest.fetchMultiple('category', 15)
+</code></pre>
+<h3 id="other-changes"><a class="header" href="#other-changes">Other Changes</a></h3>
+<ul>
+<li>The optional options <code>max</code> and <code>min</code> of the <code>fetchNeko()</code> function have been removed</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-python"><a class="header" href="#using-python">Using Python</a></h1>
+<p>The source code is available at <a href="https://github.com/nekos-best/nekos-best.py">GitHub</a> ・ Made by <a href="https://github.com/PredaaA">PredaaA</a></p>
+<p><a href="https://pypi.org/project/nekosbest/"><img src="https://img.shields.io/pypi/v/nekosbest?logo=pypi&amp;style=flat-square" alt="NekosBest" /></a> <a href="https://pypi.org/project/nekosbest/"><img src="https://img.shields.io/pypi/dm/nekosbest?color=blue&amp;logo=pypi&amp;style=flat-square" alt="NekosBest" /></a> <a href="examples/github.com/nekos-best/nekos-best.py"><img src="https://img.shields.io/github/stars/nekos-best/nekos-best.py?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
+<hr />
+<h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
+<ul>
+<li>aiohttp (&gt;=3.6.2)</li>
+</ul>
+<h2 id="installation-1"><a class="header" href="#installation-1">Installation</a></h2>
+<p>Make sure to have pip installed in your environement. It will also install all requirements.</p>
+<p><code>pip install -U nekosbest</code></p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-py">import asyncio
+from typing import Union
+
+from nekosbest import Client, Result
+
+client = Client()
+
+async def get_img(type: str, amount: int = 1) -&gt; Union[Result, list[Result]]:
+    result = await client.get_image(type, amount)
+    print(result)
+
+loop = asyncio.get_event_loop()
+
+loop.run_until_complete(get_img(&quot;neko&quot;))
+# &lt;Result url=https://nekos.best/api/v2/neko/0356.png artist_href=https://www.pixiv.net/en/users/38378485 artist_name=奥馬 source_url=https://www.pixiv.net/en/artworks/88188062&gt;
+loop.run_until_complete(get_img(&quot;neko&quot;, 2))
+# [&lt;Result url=https://nekos.best/api/v2/neko/0072.png artist_href=https://www.pixiv.net/en/users/12191 artist_name=こみやひとま source_url=https://www.pixiv.net/en/artworks/66834141&gt;, &lt;Result url=https://nekos.best/api/v2/neko/0215.png artist_href=https://www.pixiv.net/en/users/3684923 artist_name=ひゅらさん source_url=https://www.pixiv.net/en/artworks/79697176&gt;]
+
+</code></pre>
+<h2 id="breaking-changes"><a class="header" href="#breaking-changes">Breaking changes</a></h2>
+<h3 id="migrate-from-0xx-to-100"><a class="header" href="#migrate-from-0xx-to-100">Migrate from 0.x.x to 1.0.0</a></h3>
+<p><code>Client.teardown</code> has been removed, it is no longer needed to pass it when closing.</p>
+<h3 id="migrate-from-1020-to-110"><a class="header" href="#migrate-from-1020-to-110">Migrate from 1.0.20 to 1.1.0</a></h3>
+<p><code>nekosbest.Result.source_details</code> has been removed. Source details are now in <code>Result</code>.<br />
+And therefore, <code>nekosbest.Results</code> and <code>nekosbest.SourceDetails</code> got removed too.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="unofficial-examples"><a class="header" href="#unofficial-examples">Unofficial Examples</a></h1>
+<hr />
+<p>Using the following examples is not supported. Use them at your own risk. We cannot guarantee the safety or maintenance of this chapter's libraries.</p>
+<p>Do you want to add your own example? Check out our <a href="https://github.com/nekos-best/docs#contributing">repository</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-bdfd"><a class="header" href="#using-bdfd">Using BDFD</a></h1>
+<p>Example added by: <a href="https://github.com/oriel-beck">oriel beck</a></p>
+<hr />
+<h2 id="getting-a-image"><a class="header" href="#getting-a-image">Getting a Image</a></h2>
+<pre><code class="language-php">$nomention
+$httpGet[https://nekos.best/api/v2/neko]
+$title[Here is a Neko for you!]
+$description[**Source:** $httpResult[results;0;source_url]]
+$image[$httpResult[results;0;url]]
+$footer[nekos.best API]
+$color[#e91e63]
+</code></pre>
+<h2 id="getting-a-gif"><a class="header" href="#getting-a-gif">Getting a GIF</a></h2>
+<pre><code class="language-php">$nomention
+$httpGet[https://nekos.best/api/v2/pat]
+$description[&lt;@$authorID&gt; hugged &lt;@$mentioned[1]&gt;]
+$image[$httpResult[results;0;url]]
+$footer[nekos.best API - Anime: $httpResult[results;0;anime_name]]
+$color[#e91e63]
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><!-- markdownlint-disable MD025 -->
+<h1 id="terms-and-conditions"><a class="header" href="#terms-and-conditions">Terms and Conditions</a></h1>
+<blockquote>
+<p>Last updated: February 06, 2022</p>
+</blockquote>
+<h1 id="interpretation-and-definitions"><a class="header" href="#interpretation-and-definitions">Interpretation and Definitions</a></h1>
+<h2 id="interpretation"><a class="header" href="#interpretation">Interpretation</a></h2>
+<p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+<h2 id="definitions"><a class="header" href="#definitions">Definitions</a></h2>
+<p>For the purposes of these Terms and Conditions:</p>
+<ul>
+<li><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>
+<li><strong>Country</strong> refers to: Virginia, United States</li>
+<li><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to nekos.best API.</li>
+<li><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</li>
+<li><strong>Service</strong> refers to the Website.</li>
+<li><strong>Website</strong> refers to nekos.best API, accessible from <a href="https://nekos.best">https://nekos.best</a></li>
+<li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
+</ul>
+<h2 id="acknowledgment"><a class="header" href="#acknowledgment">Acknowledgment</a></h2>
+<p>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.</p>
+<p>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.</p>
+<p>By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.</p>
+<p>Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.</p>
+<h2 id="links-to-other-websites"><a class="header" href="#links-to-other-websites">Links to Other Websites</a></h2>
+<p>Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.</p>
+<p>The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
+<h2 id="termination"><a class="header" href="#termination">Termination</a></h2>
+<p>We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.</p>
+<p>Upon termination, Your right to use the Service will cease immediately.</p>
+<h2 id="limitation-of-liability"><a class="header" href="#limitation-of-liability">Limitation of Liability</a></h2>
+<p>Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.</p>
+<p>To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.</p>
+<p>Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.</p>
+<h2 id="as-is-and-as-available-disclaimer"><a class="header" href="#as-is-and-as-available-disclaimer">&quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer</a></h2>
+<p>The Service is provided to You &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.</p>
+<p>Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.</p>
+<p>Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.</p>
+<h2 id="governing-law"><a class="header" href="#governing-law">Governing Law</a></h2>
+<p>The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.</p>
+<h2 id="disputes-resolution"><a class="header" href="#disputes-resolution">Disputes Resolution</a></h2>
+<p>If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.</p>
+<h2 id="for-european-union-eu-users"><a class="header" href="#for-european-union-eu-users">For European Union (EU) Users</a></h2>
+<p>If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.</p>
+<h2 id="united-states-legal-compliance"><a class="header" href="#united-states-legal-compliance">United States Legal Compliance</a></h2>
+<p>You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a &quot;terrorist supporting&quot; country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.</p>
+<h1 id="severability-and-waiver"><a class="header" href="#severability-and-waiver">Severability and Waiver</a></h1>
+<h2 id="severability"><a class="header" href="#severability">Severability</a></h2>
+<p>If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.</p>
+<h2 id="waiver"><a class="header" href="#waiver">Waiver</a></h2>
+<p>Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.</p>
+<h2 id="translation-interpretation"><a class="header" href="#translation-interpretation">Translation Interpretation</a></h2>
+<p>These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.</p>
+<h2 id="changes-to-these-terms-and-conditions"><a class="header" href="#changes-to-these-terms-and-conditions">Changes to These Terms and Conditions</a></h2>
+<p>We reserve the right, at Our sole discretion, to modify or replace these Terms at any time.</p>
+<p>By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.</p>
+<h2 id="contact-us"><a class="header" href="#contact-us">Contact Us</a></h2>
+<p>If you have any questions about these Terms and Conditions, You can contact us:</p>
+<ul>
+<li>By email: <a href="mailto:contact@nekos.best">contact@nekos.best</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
