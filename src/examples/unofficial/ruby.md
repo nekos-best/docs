@@ -9,7 +9,7 @@ The source code is available at [GitHub](https://github.com/NekoFanatic/nekos-be
 
 ## Installation
 
-Download the [`nekosbest-2.0.1.gem`](https://github.com/NekoFanatic/nekos-best.rb/blob/master/nekosbest-2.0.1.gem) file and install the gem with:
+Download the [`nekosbest-2.0.2.gem`](https://github.com/NekoFanatic/nekos-best.rb/blob/master/nekosbest-2.0.2.gem) file and install the gem with:
 
     $ gem install nekosbest
 
