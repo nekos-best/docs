@@ -1,3 +1,7 @@
+<!-- Under this line you can add your own notes. -->
+
+---
+<!--  DO NOT REMOVE  -->
 # Pull Request check
 
 <!-- To check something as marked, fill the blank [] with an X inside. (Example: [X]) -->
