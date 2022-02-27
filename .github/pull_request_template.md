@@ -1,16 +1,18 @@
-<!-- Under this line you can add your own notes. -->
+<!-- markdownlint-disable MD041 MD026 -->
 
----
-<!--  DO NOT REMOVE  -->
-# Pull Request check
+<!-- Please make sure to read and answer to all questions -->
 
-<!-- To check something as marked, fill the blank [] with an X inside. (Example: [X]) -->
-- [ ] My pull request follows the [Contributing Guidelines](https://github.com/nekos-best/docs#contributing-guidelines).
+## What does this Pull Request change?
 
-**If your Pull Request contains an example, make sure to check those things listed below too:**
+## I agree that my Pull Request:
 
-<!-- Only select those when submitting examples. -->
-- [ ] My submission is well documented.
-- [ ] My submission is ordered alphabetically.
-- [ ] My submission is listed under "src/examples/unofficial/"
-- [ ] My submission is not a duplicate of an already existing example.
+- Follows the [Contribution Guidelines](https://github.com/nekos-best/docs#contribution-guidelines)
+- Follows [GitHub's Community Guidelines](https://docs.github.com/en/github/site-policy/github-community-guidelines)
+<!-- Uncomment the following lines if your PR changes contains an example.
+- Contains an example that is well documented and is ordered alphabetically in [SUMMARY.md](https://github.com/nekos-best/docs/blob/main/src/SUMMARY.md)
+- Contains an example that is not a duplicate of an already existing example.
+-->
+
+## Any additional notes?
+
+None

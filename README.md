@@ -1,11 +1,11 @@
 # NekosBest's [documentation](https://docs.nekos.best)
 
-## Index
+## Table of Contents
 
 <!-- no toc -->
 - [Introduction](#introduction)
 - [Contributing](#contributing)
-  - [Contributing Guidelines](#contributing-guidelines)
+  - [Contribution Guidelines](#contribution-guidelines)
 
 ## Introduction
 
@@ -17,20 +17,22 @@ If you have any question feel free to ask us in the [Discord Server](https://nek
 
 Thank you for taking your time to contribute, we really appreciate it.
 
-Please note that you may contribute only by [adding unofficial examples](#add-an-unofficial-example) and fixing any grammar mistakes. For anything else please open a new issue.
+Please note that you can contribute only by [adding examples](#add-an-unofficial-example) and fixing any grammar mistakes. For anything else please open a new issue.
 
 To contribute you must [fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) to make any changes and [create a new pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-requesthttps://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) after you are done. After you create a new pull request, wait patiently until a contributor reviews your pull request.
 
-### Contributing Guidelines
+### Contribution Guidelines
 
-- When adding a new example, you must explain how to use it.
-- Make sure your code works when submitting a new example.
-- We do not support other languages at this time. Therefore, your submission must be submitted in English.
+- Your submission may not be submitted in languages other than English.
+- Your submission may not contain inappropriate content.
+- Example-specific guidelines:
+  - Make sure to document your example with as many details as possible.
+  - Make sure your code works and is thoroughly tested.
 
 We reserve the rights to
 
-- Remove your submission at any time.
 - Make any changes after your submission.
+- Remove your submission.
 
 without any prior notice.
 
