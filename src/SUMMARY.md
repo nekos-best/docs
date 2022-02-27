@@ -12,6 +12,7 @@
 - [Python](examples/python.md)
   - [Unofficial Examples](examples/unofficial/README.md)
     - [BDFD](examples/unofficial/bdfd.md)
+    - [ruby](examples/unofficial/ruby.md)
 
 # Legal
 - [Terms and Conditions](legal/terms.md)
