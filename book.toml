@@ -4,6 +4,13 @@ multilingual = false
 title = "nekos.best API"
 description = "The official nekos.best API documentation."
 
+[build]
+build-dir = "docs"
+
 [output.html]
+default-theme = "navy"
 git-repository-icon = "fa-github"
 git-repository-url = "https://github.com/nekos-best/docs"
+
+[output.html.print]
+enable = false

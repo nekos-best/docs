@@ -216,12 +216,14 @@
 <p><strong>Example:</strong> <a href="https://nekos.best/api/v2/neko">https://nekos.best/api/v2/neko</a></p>
 <p><strong>Returns:</strong></p>
 <pre><code class="language-json">{
-   &quot;results&quot;: [{
-       &quot;source_url&quot;: &quot;https://www.pixiv.net/en/artworks/79872328&quot;,
-       &quot;artist_href&quot;: &quot;https://www.pixiv.net/en/users/5768971&quot;,
-       &quot;artist_name&quot;: &quot;jimmy&quot;,
-       &quot;url&quot;: &quot;https://nekos.best/api/v2/neko/0238.png&quot;
-   }]
+  &quot;results&quot;:[
+     {
+        &quot;artist_href&quot;:&quot;https://www.pixiv.net/en/users/47065875&quot;,
+        &quot;artist_name&quot;:&quot;かえで&quot;,
+        &quot;source_url&quot;:&quot;https://www.pixiv.net/en/artworks/88682108&quot;,
+        &quot;url&quot;:&quot;https://nekos.best/api/v2/neko/0427.png&quot;
+     }
+  ]
 }
 </code></pre>
 </blockquote>
@@ -229,22 +231,22 @@
 <p><strong>Example:</strong> <a href="https://nekos.best/api/v2/hug?amount=2">https://nekos.best/api/v2/hug?amount=2</a></p>
 <p><strong>Returns:</strong></p>
 <pre><code class="language-json">{
-    &quot;results&quot;: [
-        {
-            &quot;url&quot;: &quot;https://neko.best/api/v2/hug/018.gif&quot;,
-            &quot;anime_name&quot;: &quot;Darker Than Black: Ryuusei no Gemini&quot;
-        },
-        {
-            &quot;url&quot;: &quot;https://neko.best/api/v2/hug/016.gif&quot;,
-            &quot;anime_name&quot;: &quot;Nakitai Watashi wa Neko o Kaburu&quot;
-        }
-    ]
+  &quot;results&quot;:[
+     {
+        &quot;anime_name&quot;:&quot;Sword Art Online&quot;,
+        &quot;url&quot;:&quot;https://nekos.best/api/v2/hug/008.gif&quot;
+     },
+     {
+        &quot;anime_name&quot;:&quot;Hibike! Euphonium&quot;,
+        &quot;url&quot;:&quot;https://nekos.best/api/v2/hug/004.gif&quot;
+     }
+  ]
 }
 </code></pre>
 </blockquote>
 <h2 id="get-categoryfilenameformat"><a class="header" href="#get-categoryfilenameformat">GET <code>/:category/:filename.:format</code></a></h2>
 <p>Gets a specific image from our categories. Replace <code>:filename</code> with the asset's filename and <code>:format</code> with the category's format.</p>
-<p><strong>Note:</strong> The asset's metadata are provided URL-encoded, in the response's headers under <code>details</code>.</p>
+<p><strong>Note:</strong> The asset's metadata are provided URL-encoded, in the response's headers under <code>anime_name</code>, <code>artist_name</code>, <code>artist_href</code> and <code>source_url</code>.</p>
 <blockquote>
 <p><strong>Example:</strong> <a href="https://nekos.best/api/v2/hug/001.gif">https://nekos.best/api/v2/hug/001.gif</a></p>
 <p><strong>Returns:</strong> <em>Binary data</em></p>
@@ -466,20 +468,6 @@ $color[#e91e63]
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
