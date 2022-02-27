@@ -1,11 +1,8 @@
 [book]
+description = "The official nekos.best API documentation."
 language = "en"
 multilingual = false
 title = "nekos.best API"
-description = "The official nekos.best API documentation."
-
-[build]
-build-dir = "docs"
 
 [output.html]
 default-theme = "navy"
