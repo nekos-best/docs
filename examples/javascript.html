@@ -140,41 +140,27 @@
 <h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
 <p><code>npm install nekos-best.js</code> | <code>yarn install nekos-best.js</code></p>
 <h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
-<h3 id="get-a-random-neko-image"><a class="header" href="#get-a-random-neko-image">Get a random neko image</a></h3>
-<h4 id="recommended-way"><a class="header" href="#recommended-way">Recommended way</a></h4>
-<pre><code class="language-js">import { Client } from &quot;nekos-best.js&quot;;
+<pre><code class="language-js">import { Client, fetchRandom } from &quot;nekos-best.js&quot;;
 
-const nekosBest = new Client();
-await nekosBest.init();
-
-console.log(await nekosBest.fetchRandom(&quot;neko&quot;)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/0138.png' }] }
-</code></pre>
-<h4 id="alternative-way"><a class="header" href="#alternative-way">Alternative way</a></h4>
-<pre><code class="language-js">import { fetchRandom } from &quot;nekos-best.js&quot;;
-
+// You can use the `fetchRandom()` function to fetch a random neko.
 console.log(await fetchRandom(&quot;neko&quot;)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/0247.png' }] }
-</code></pre>
-<h3 id="get-multiple-hug-gifs"><a class="header" href="#get-multiple-hug-gifs">Get multiple hug GIFs</a></h3>
-<pre><code class="language-js">import { Client } from &quot;nekos-best.js&quot;;
 
+// Alternatively, you can initialize a new client which offers more features.
 const nekosBest = new Client();
 await nekosBest.init();
 
+// Such as the `&lt;Client&gt;.fetchRandom()` method.
+console.log(await nekosBest.fetchRandom(&quot;neko&quot;)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/0138.png' }] }
+
+// You can use the `&lt;Client&gt;.fetchMultiple()` method to fetch multiple hug GIFs.
 console.log(await nekosBest.fetchMultiple(&quot;hug&quot;, 10)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/hug/019.gif' }, ···] }
-</code></pre>
-<h3 id="get-a-random-file"><a class="header" href="#get-a-random-file">Get a random file</a></h3>
-<pre><code class="language-js">import { Client } from &quot;nekos-best.js&quot;;
 
-const nekosBest = new Client();
-await nekosBest.init();
-
+// Or the `&lt;Client&gt;.fetchFile()` method to get a single file.
 console.log(await nekosBest.fetchFile(&quot;neko&quot;)); // { artist_href: '···', ···, data: &lt;Buffer&gt; }
 </code></pre>
 <h3 id="build-a-simple-discord-bot-with-discordjs"><a class="header" href="#build-a-simple-discord-bot-with-discordjs">Build a simple Discord Bot with <a href="https://www.npmjs.com/package/discord.js"><code>discord.js</code></a></a></h3>
 <pre><code class="language-js">import { Client as DiscordClient } from &quot;discord.js&quot;;
 import { Client } from &quot;nekos-best.js&quot;;
-
-const TOKEN = &quot;************************.******.***************************&quot;;
 
 const discordClient = new DiscordClient();
 const nekosBest = new Client();
@@ -188,7 +174,7 @@ discordClient.on(&quot;messageCreate&quot;, async (message) =&gt; {
     }
 })
 
-discordClient.login(TOKEN);
+discordClient.login(&quot;************************.******.***************************&quot;);
 </code></pre>
 <h2 id="migrate-from-4xx"><a class="header" href="#migrate-from-4xx">Migrate from 4.X.X</a></h2>
 <h3 id="the-fetchnekocategory-function-has-been-removed-in-favor-of-the-clientfetchrandom-method-and-its-shortcut-fetchrandom"><a class="header" href="#the-fetchnekocategory-function-has-been-removed-in-favor-of-the-clientfetchrandom-method-and-its-shortcut-fetchrandom">The <code>fetchNeko(category)</code> function has been removed in favor of the <code>&lt;Client&gt;.fetchRandom()</code> method and its shortcut <code>fetchRandom()</code></a></h3>
