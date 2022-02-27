@@ -6,6 +6,7 @@ title = "nekos.best API"
 
 [output.html]
 default-theme = "navy"
+cname = "docs.nekos.best"
 git-repository-icon = "fa-github"
 git-repository-url = "https://github.com/nekos-best/docs"
 
