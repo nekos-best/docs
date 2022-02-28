@@ -10,8 +10,9 @@
 # Examples
 - [JavaScript](examples/javascript.md)
 - [Python](examples/python.md)
-  - [Unofficial Examples](examples/unofficial/README.md)
-    - [BDFD](examples/unofficial/bdfd.md)
+- [Unofficial Examples](examples/unofficial/README.md)
+  - [BDFD](examples/unofficial/bdfd.md)
+  - [Rust](examples/unofficial/rust.md)
 
 # Legal
 - [Terms and Conditions](legal/terms.md)
