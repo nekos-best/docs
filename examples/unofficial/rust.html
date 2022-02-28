@@ -135,30 +135,31 @@
                     <main>
                         <h1 id="using-rust"><a class="header" href="#using-rust">Using Rust</a></h1>
 <p>Example added by: <a href="https://github.com/oaleaf">oaleaf</a></p>
+<p><a href="https://crates.io/crates/nekosbest"><img src="https://img.shields.io/crates/v/nekosbest?style=flat-square" alt="NekosBest" /></a> <a href="https://crates.io/crates/nekosbest"><img src="https://img.shields.io/crates/d/nekosbest?color=orange&amp;style=flat-square" alt="NekosBest" /></a>
+<a href="https://github.com/dnbln/nb-rs"><img src="https://img.shields.io/github/stars/dnbln/nb-rs?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
 <hr />
 <p>Add the following to your <code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">[dependencies]
 nekosbest = &quot;0.11.0&quot;
 </code></pre>
 <p>Getting a single URL:</p>
-<pre><pre class="playground"><code class="language-rust">#[tokio::main]
+<pre><code class="language-rust noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let img_url: String = nekosbest::get(nekosbest::Category::Neko).await?.url;
     println!(&quot;{}&quot;, img_url);
     Ok(())
-}
-</code></pre></pre>
+</code></pre>
 <p>Multiple URLs:</p>
-<pre><pre class="playground"><code class="language-rust">#[tokio::main]
+<pre><code class="language-rust noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let images = nekosbest::get_amount(nekosbest::Category::Neko, 20).await?.0;
     println!(&quot;{:?}&quot;, images);
     Ok(())
 }
-</code></pre></pre>
-<h1 id="details"><a class="header" href="#details">Details</a></h1>
+</code></pre>
+<h2 id="details"><a class="header" href="#details">Details</a></h2>
 <p>For <code>Category::Neko</code> (previously <code>Category::Nekos</code>) and <code>Category::Kitsune</code>:</p>
-<pre><pre class="playground"><code class="language-rust">#[tokio::main]
+<pre><code class="language-rust noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::get(nekosbest::Category::Neko)
         .await?
@@ -170,9 +171,9 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     println!(&quot;Artist link: {}&quot;, details.artist_href);
     Ok(())
 }
-</code></pre></pre>
+</code></pre>
 <p>Everything else:</p>
-<pre><pre class="playground"><code class="language-rust">#[tokio::main]
+<pre><code class="language-rust noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::get(nekosbest::Category::Pat)
         .await?
@@ -182,11 +183,11 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     println!(&quot;Anime name: {}&quot;, details.anime_name);
     Ok(())
 }
-</code></pre></pre>
-<h2 id="with-the-strong-types-feature"><a class="header" href="#with-the-strong-types-feature">With the <code>strong-types</code> feature</a></h2>
+</code></pre>
+<h3 id="with-the-strong-types-feature"><a class="header" href="#with-the-strong-types-feature">With the <code>strong-types</code> feature</a></h3>
 <p>Note: this is an experimental feature, and may change at any time.</p>
 <p>For <code>Category::Neko</code>:</p>
-<pre><pre class="playground"><code class="language-rust">#[tokio::main]
+<pre><code class="language-rust noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let resp = nekosbest::st_get::&lt;nekosbest::Neko&gt;().await?;
     let details = resp.details();
@@ -195,31 +196,31 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     println!(&quot;Source: {}&quot;, details.source_url);
     Ok(())
 }
-</code></pre></pre>
+</code></pre>
 <p>Everything else:</p>
-<pre><pre class="playground"><code class="language-rust">#[tokio::main]
+<pre><code class="language-rust noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::st_get::&lt;nekosbest::Pat&gt;().await?.details;
     println!(&quot;Anime name: {}&quot;, details.anime_name);
     Ok(())
 }
-</code></pre></pre>
-<h1 id="the-local-feature"><a class="header" href="#the-local-feature">The <code>local</code> feature</a></h1>
+</code></pre>
+<h2 id="the-local-feature"><a class="header" href="#the-local-feature">The <code>local</code> feature</a></h2>
 <p>Skip requests to the API completely, generating urls locally from metadata pulled in during build time:</p>
-<pre><pre class="playground"><code class="language-rust">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+<pre><code class="language-rust noplaypen">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let img_url = nekosbest::local::Neko.get(); // requires the &quot;local&quot; feature
     println!(&quot;{}&quot;, img_url);
     Ok(())
 }
-</code></pre></pre>
+</code></pre>
 <p>Or with your own random number (the default is the thread RNG):</p>
-<pre><pre class="playground"><code class="language-rust">fn main() {
+<pre><code class="language-rust noplaypen">fn main() {
     let your_random = unimplemented!();
     let img_url = nekosbest::local::Neko.get_random(your_random);
     println!(&quot;{}&quot;, img_url);
     Ok(())
 }
-</code></pre></pre>
+</code></pre>
 
                     </main>
 
