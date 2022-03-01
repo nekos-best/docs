@@ -11,7 +11,7 @@
 
 Welcome to [nekos.best](https://nekos.best)'s documentation repository.
 
-If you have any question feel free to ask us in the [Discord Server](https://nekos.best/discord?ref=docs).
+If you have any questions feel free to ask us in the [Discord Server](https://nekos.best/discord?ref=docs).
 
 ## Contributing
 
