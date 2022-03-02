@@ -1,12 +1,15 @@
 [book]
-description = "The official nekos.best API documentation."
 language = "en"
 multilingual = false
 title = "nekos.best API"
+description = "The official nekos.best API documentation."
 
 [output.html]
-default-theme = "navy"
 cname = "docs.nekos.best"
+
+default-theme = "nekosbest"
+preferred-dark-theme = "NekosBest"
+
 git-repository-icon = "fa-github"
 git-repository-url = "https://github.com/nekos-best/docs"
 
