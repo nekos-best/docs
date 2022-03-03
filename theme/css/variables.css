@@ -32,12 +32,12 @@
     --theme-popup-border: #e91e63;
     --theme-hover: #191f26;
 
-    --quote-bg: hsl(226, 15%, 17%);
-    --quote-border: hsl(226, 15%, 22%);
+    --quote-bg: hsl(210, 10%, 15%);
+    --quote-border: #e91e63;
 
     --table-border-color: hsl(210, 25%, 13%);
-    --table-header-bg: hsl(210, 25%, 28%);
-    --table-alternate-bg: hsl(210, 25%, 11%);
+    --table-header-bg: hsl(200, 10%, 20%);
+    --table-alternate-bg: hsl(210, 20%, 20%);
 
     --searchbar-border-color: #848484;
     --searchbar-bg: #424242;
@@ -46,7 +46,7 @@
     --searchresults-header-fg: #666;
     --searchresults-border-color: #e91e63;
     --searchresults-li-bg: #252932;
-    --search-mark-bg: #e3b171;
+    --search-mark-bg: #ff6699;
 }
 
 .light {

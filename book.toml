@@ -8,7 +8,7 @@ description = "The official nekos.best API documentation."
 cname = "docs.nekos.best"
 
 default-theme = "nekosbest"
-preferred-dark-theme = "NekosBest"
+preferred-dark-theme = "nekosbest"
 
 git-repository-icon = "fa-github"
 git-repository-url = "https://github.com/nekos-best/docs"
