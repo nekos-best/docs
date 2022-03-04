@@ -22,6 +22,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let img_url: String = nekosbest::get(nekosbest::Category::Neko).await?.url;
     println!("{}", img_url);
     Ok(())
+}
 ```
 
 Multiple URLs:
@@ -45,7 +46,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let details = nekosbest::get(nekosbest::Category::Neko)
         .await?
         .details
-        .try_into_neko()
+        .try_into_image()
         .unwrap();
     println!("Source: {}", details.source_url);
     println!("Artist: {}", details.artist_name);
