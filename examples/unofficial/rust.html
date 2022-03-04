@@ -148,6 +148,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let img_url: String = nekosbest::get(nekosbest::Category::Neko).await?.url;
     println!(&quot;{}&quot;, img_url);
     Ok(())
+}
 </code></pre>
 <p>Multiple URLs:</p>
 <pre><code class="language-rust noplaypen">#[tokio::main]
@@ -164,7 +165,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::get(nekosbest::Category::Neko)
         .await?
         .details
-        .try_into_neko()
+        .try_into_image()
         .unwrap();
     println!(&quot;Source: {}&quot;, details.source_url);
     println!(&quot;Artist: {}&quot;, details.artist_name);
