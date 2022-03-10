@@ -66,7 +66,7 @@ Create a ServiceCollection, then add an instance of the NekosBestApi class to it
 ```cs
 using System;
 using System.Threading.Tasks;
-using NekosBestApi;
+using NekosBestApiNet;
 using Microsoft.Extensions.DependencyInjection;
 
 public class Startup 
@@ -106,8 +106,8 @@ Using this in a class:
 
 ```cs
 using System.Threading.Tasks;
-using NekosBestApi;
-using NekosBestApi.Models.Images;
+using NekosBestApiNet;
+using NekosBestApiNet.Models.Images;
 
 public class ExampleClass 
 {
