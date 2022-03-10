@@ -13,7 +13,7 @@
 - [Unofficial Examples](examples/unofficial/README.md)
   - [BDFD](examples/unofficial/bdfd.md)
   - [Rust](examples/unofficial/rust.md)
-  - [C#](examples/unofficial/C#.md)
+  - [C#](examples/unofficial/c#.md)
 
 # Legal
 - [Terms and Conditions](legal/terms.md)
