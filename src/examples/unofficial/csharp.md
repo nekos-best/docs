@@ -47,7 +47,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using NekosBestApiNet;
 
-public ExampleClass() 
+public ExampleClass
 {
   var httpClient = new HttpClient 
   {
