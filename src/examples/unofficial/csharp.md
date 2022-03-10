@@ -29,7 +29,7 @@ public class ExampleClass
 
   public async Task Hug() 
   {
-    var image = await _nekosBestApi.ActionApi.Hug();
+    var image = await _nekosBestApi.ActionsApi.Hug();
 
     Console.WriteLine(image.Results.FirstOrDefault().Url);
   }
