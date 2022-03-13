@@ -132,10 +132,12 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="using-c"><a class="header" href="#using-c">Using C#</a></h1>
-<p>Added by <a href="https://github.com/Sylveon76">Sylveon</a></p>
-<h2 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h2>
-<h3 id="installing-the-package"><a class="header" href="#installing-the-package">Installing the package</a></h3>
+                        <!-- markdownlint-disable MD020 -->
+<h1 id="using-c"><a class="header" href="#using-c">Using C#</a></h1>
+<p>Example added by: <a href="https://github.com/Sylveon76">Sylveon</a></p>
+<p><a href="https://www.nuget.org/packages/NekosBestApiNet/"><img src="https://img.shields.io/nuget/v/NekosBestApiNet?color=white&amp;logo=nuget&amp;style=flat-square" alt="NekosBest" /></a> <a href="https://www.nuget.org/packages/NekosBestApiNet/"><img src="https://img.shields.io/nuget/dt/NekosBestApiNet?color=white&amp;logo=nuget&amp;style=flat-square" alt="NekosBest" /></a></p>
+<hr />
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
 <p>Add the NuGet package <code>NekosBestApiNet</code> to your project:</p>
 <pre><code class="language-ps">dotnet add package NekosBestApiNet
 </code></pre>
@@ -159,7 +161,7 @@ public class ExampleClass
   }
 }
 </code></pre>
-<h3 id="example-using-custom-httpclient"><a class="header" href="#example-using-custom-httpclient">Example using custom HttpClient</a></h3>
+<h2 id="example-using-custom-httpclient"><a class="header" href="#example-using-custom-httpclient">Example using custom HttpClient</a></h2>
 <p>You can provide your own HttpClient instance, but you have to set the BaseAddress manually</p>
 <pre><code class="language-cs">using System;
 using System.Net.Http;
@@ -182,7 +184,7 @@ class ExampleClass
     }
 }```
 </code></pre>
-<h3 id="example-using-dependency-injection"><a class="header" href="#example-using-dependency-injection">Example using dependency injection</a></h3>
+<h2 id="example-using-dependency-injection"><a class="header" href="#example-using-dependency-injection">Example using dependency injection</a></h2>
 <p>Create a ServiceCollection, then add an instance of the NekosBestApi class to it</p>
 <pre><code class="language-cs">using System;
 using System.Threading.Tasks;
@@ -221,7 +223,7 @@ public class Startup
   }
 }
 </code></pre>
-<p>Using this in a class:</p>
+<h3 id="using-this-in-a-class"><a class="header" href="#using-this-in-a-class">Using this in a class</a></h3>
 <pre><code class="language-cs">using System.Threading.Tasks;
 using NekosBestApiNet;
 using NekosBestApiNet.Models.Images;
