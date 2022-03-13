@@ -3,9 +3,10 @@
 Example added by: [oaleaf](https://github.com/oaleaf)
 
 [![NekosBest](https://img.shields.io/crates/v/nekosbest?style=flat-square)](https://crates.io/crates/nekosbest) [![NekosBest](https://img.shields.io/crates/d/nekosbest?color=orange&style=flat-square)](https://crates.io/crates/nekosbest)
-[![NekosBest](https://img.shields.io/github/stars/dnbln/nb-rs?color=yellow&label=Stars&logo=github&style=flat-square)](https://github.com/dnbln/nb-rs)
 
 ---
+
+## Installation
 
 Add the following to your `Cargo.toml`:
 
@@ -13,6 +14,8 @@ Add the following to your `Cargo.toml`:
 [dependencies]
 nekosbest = "0.11.0"
 ```
+
+## Usage
 
 Getting a single URL:
 

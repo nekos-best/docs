@@ -1,10 +1,14 @@
-# Using C#
+<!-- markdownlint-disable MD020 -->
 
-Added by [Sylveon](https://github.com/Sylveon76)
+# Using C\#
 
-## Getting started
+Example added by: [Sylveon](https://github.com/Sylveon76)
 
-### Installing the package
+[![NekosBest](https://img.shields.io/nuget/v/NekosBestApiNet?color=white&logo=nuget&style=flat-square)](https://www.nuget.org/packages/NekosBestApiNet/) [![NekosBest](https://img.shields.io/nuget/dt/NekosBestApiNet?color=white&logo=nuget&style=flat-square)](https://www.nuget.org/packages/NekosBestApiNet/)
+
+---
+
+## Installation
 
 Add the NuGet package `NekosBestApiNet` to your project:
 
@@ -13,7 +17,6 @@ dotnet add package NekosBestApiNet
 ```
 
 ### Simple usage
-
 
 ```cs
 using System;
@@ -36,7 +39,7 @@ public class ExampleClass
 }
 ```
 
-### Example using custom HttpClient
+## Example using custom HttpClient
 
 You can provide your own HttpClient instance, but you have to set the BaseAddress manually
 
@@ -63,10 +66,9 @@ class ExampleClass
 }```
 ```
 
-### Example using dependency injection
+## Example using dependency injection
 
 Create a ServiceCollection, then add an instance of the NekosBestApi class to it
-
 
 ```cs
 using System;
@@ -107,7 +109,7 @@ public class Startup
 }
 ```
 
-Using this in a class:
+### Using this in a class
 
 ```cs
 using System.Threading.Tasks;
@@ -125,9 +127,3 @@ public class ExampleClass
     => await _nekosBestApi.Hug();
 }
 ```
-
-[0]: https://img.shields.io/nuget/v/NekosBestApiNet?style=flat-square
-
-[1]: https://www.nuget.org/packages/NekosBestApiNet
-
-[2]: https://img.shields.io/nuget/dt/NekosBestApiNet?style=flat-square

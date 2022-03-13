@@ -13,5 +13,8 @@ preferred-dark-theme = "nekosbest"
 git-repository-icon = "fa-github"
 git-repository-url = "https://github.com/nekos-best/docs"
 
+[output.html.search]
+limit-results = 10
+
 [output.html.print]
 enable = false
