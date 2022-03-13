@@ -94,7 +94,7 @@ public class Startup
   {
     var exampleClass = _serviceProvider.GetService<ExampleClass>();
 
-    var image = await _nekosBestApi.ActionApi.Hug();
+    var image = await _nekosBestApi.ActionsApi.Hug();
 
     Console.WriteLine(image.Results.FirstOrDefault().Url);
   }
