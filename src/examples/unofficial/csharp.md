@@ -1,5 +1,3 @@
-<!-- markdownlint-disable MD020 -->
-
 # Using C\#
 
 Example added by: [Sylveon](https://github.com/Sylveon76)
