@@ -47,15 +47,20 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using NekosBestApiNet;
 
-public ExampleClass
+class ExampleClass
 {
-  var httpClient = new HttpClient 
-  {
-    BaseAddress = new Uri("https://nekos.best/api/v2")
-  };
+    private NekosBestApi _nekosBestApi;
 
-  _nekosBestApi = new NekosBestApi(httpClient);
-}
+    public ExampleClass()
+    {
+        var httpClient = new HttpClient
+        {
+            BaseAddress = new Uri("https://nekos.best/api/v2")
+        };
+
+        _nekosBestApi = new NekosBestApi(httpClient);
+    }
+}```
 ```
 
 ### Example using dependency injection
