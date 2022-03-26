@@ -19,7 +19,7 @@ Our base URL is `https://nekos.best/api/:version`. Replace `:version` with one o
 
 ### Images (`.png`)
 
-`kitsune`, `neko`
+`kitsune`, `neko`, `waifu`
 
 ### GIFs (`.gif`)
 
