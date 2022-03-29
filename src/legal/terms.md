@@ -2,7 +2,7 @@
 
 # Terms and Conditions
 
-> Last updated: February 06, 2022
+> Last updated: March 29, 2022
 
 # Interpretation and Definitions
 
@@ -100,4 +100,4 @@ By continuing to access or use Our Service after those revisions become effectiv
 
 If you have any questions about these Terms and Conditions, You can contact us:
 
-- By email: [contact@nekos.best](mailto:contact@nekos.best)
+- By email: **[contact@nekos.best](mailto:contact@nekos.best)**
