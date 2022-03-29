@@ -11,9 +11,11 @@
 - [JavaScript](examples/javascript.md)
 - [Python](examples/python.md)
 - [Unofficial Examples](examples/unofficial/README.md)
+  <!--          ADD YOUR EXAMPLE UNDER HERE          -->
   - [BDFD](examples/unofficial/bdfd.md)
   - [C#](examples/unofficial/csharp.md)
   - [Rust](examples/unofficial/rust.md)
 
 # Legal
+- [Privacy Policy](legal/privacy.md)
 - [Terms and Conditions](legal/terms.md)

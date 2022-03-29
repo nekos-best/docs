@@ -14,7 +14,7 @@ Add the NuGet package `NekosBestApiNet` to your project:
 dotnet add package NekosBestApiNet
 ```
 
-### Simple usage
+## Usage
 
 ```cs
 using System;
@@ -61,7 +61,7 @@ class ExampleClass
 
         _nekosBestApi = new NekosBestApi(httpClient);
     }
-}```
+}
 ```
 
 ## Example using dependency injection

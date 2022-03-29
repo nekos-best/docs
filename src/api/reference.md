@@ -6,7 +6,7 @@
 
 ## Base URL
 
-Our base URL is `https://nekos.best/api/:version`. Replace `:version` with one of the [available versions below](#versions).
+Our base URL is **`https://nekos.best/api/:version`**. Replace `:version` with one of the [available versions below](#versions).
 
 ## Versions
 
