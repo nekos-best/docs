@@ -12,21 +12,23 @@ We focus on giving the best experience for our users and their projects, for fre
 
 ## Why nekos.best?
 
-**7 reasons to switch to us:**
+**8 reasons to switch to us:**
 
 1. No authorization needed. Not even an API key.
 
-2. Our API is fully SFW. You will never worry about NSFW/lewd images or GIFs.
+2. Wide variety of endpoints. We currently have `35` of them.
 
-3. Organized assets. Images and GIFs are separated based by their category.
+3. Our API is fully SFW. You will never worry about NSFW/lewd images or GIFs.
 
-4. Fast response times and 99.9% uptime. For projects that stability and performance matters.
+4. Organized assets. Images and GIFs are separated based by their category.
 
-5. CORS is enabled for those who want to use our collection on their websites.
+5. Fast response times and 99.9% uptime. For projects that stability and performance matters.
 
-6. Crediting creators of their work is very important for us. That's why you get everything you need about the origin of the images and GIFs.
+6. CORS is enabled for those who want to use our collection on their websites.
 
-7. We listen to our community and their feedback.
+7. Crediting creators of their work is very important for us. That's why you get everything you need about the origin of the images and GIFs.
+
+8. We listen to our community and their feedback.
 
 ## Do you need help? Do you have any suggestions or feedback?
 
