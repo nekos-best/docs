@@ -1,16 +1,40 @@
-# Using JavaScript
+<!-- markdownlint-disable MD001 -->
 
-The source code is available at [GitHub](https://github.com/nekos-best/nekos-best.js) ・ Made by [Thunder04](https://github.com/Thunder04)
-
-[![NekosBest](https://img.shields.io/npm/v/nekos-best.js?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/nekos-best.js) [![NekosBest](https://img.shields.io/npm/dm/nekos-best.js?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/nekos-best.js) [![NekosBest](https://img.shields.io/github/stars/nekos-best/nekos-best.js?color=yellow&label=Stars&logo=github&style=flat-square)](github.com/nekos-best/nekos-best.js)
+# [![JavaScript](https://cdn.discordapp.com/emojis/853021893070159882.webp?size=24&quality=lossless)](https://nekos.best/discord?ref=docs) JavaScript
 
 ---
 
-## Installation
+#### Using `fetch`
+
+```js
+fetch('https://nekos.best/api/v2/neko')
+  .then(response => response.json())
+  .then(json => console.log(json.results[0].url))
+
+// https://nekos.best/api/v2/neko/0001.png
+```
+
+#### Using `async`
+
+```js
+async function getNeko() {
+    const response = await fetch('https://nekos.best/api/v2/neko')
+    const json = await response.json()
+    console.log(json.results[0].url)
+}
+
+await getNeko()
+
+// https://nekos.best/api/v2/neko/0001.png
+```
+
+## Using our Wrapper
+
+### Installation
 
 `npm install nekos-best.js` | `yarn install nekos-best.js`
 
-## Usage
+### Usage
 
 ```js
 import { Client, fetchRandom } from "nekos-best.js";
@@ -32,30 +56,30 @@ console.log(await nekosBest.fetchMultiple("hug", 10)); // { results: [{ artist_h
 console.log(await nekosBest.fetchFile("neko")); // { artist_href: '···', ···, data: <Buffer> }
 ```
 
-### Build a simple Discord Bot with [`discord.js`](https://www.npmjs.com/package/discord.js)
+#### Build a simple Discord Bot with [`discord.js`](https://www.npmjs.com/package/discord.js)
 
 ```js
 import { Client as DiscordClient } from "discord.js";
 import { Client } from "nekos-best.js";
 
 const discordClient = new DiscordClient();
-const nekosBest = new Client();
-await nekosBest.init();
+const NekosBest = new Client();
+await NekosBest.init();
 
 discordClient.on("messageCreate", async (message) => {
     if (message.author.bot) return;
 
     if (message.content.startsWith('!neko')) {
-        message.channel.send((await nekosBest.fetchRandom("neko")).results[0].url);
+        message.channel.send((await NekosBest.fetchRandom("neko")).results[0].url);
     }
 })
 
 discordClient.login("************************.******.***************************");
 ```
 
-## Migrate from 4.X.X
+### Migrate from 4.X.X
 
-### The `fetchNeko(category)` function has been removed in favor of the `<Client>.fetchRandom()` method and its shortcut `fetchRandom()`
+#### The `fetchNeko(category)` function has been removed in favor of the `<Client>.fetchRandom()` method and its shortcut `fetchRandom()`
 
 ```diff
 - fetchNeko('category')
@@ -69,7 +93,7 @@ discordClient.login("************************.******.***************************
 + fetchRandom('category')
 ```
 
-### The optional parameter `amount` of the `fetchNeko()` function has been removed in favor of the `<Client>.fetchMultiple()` method
+#### The optional parameter `amount` of the `fetchNeko()` function has been removed in favor of the `<Client>.fetchMultiple()` method
 
 ```diff
 - fetchNeko('category', 15)
@@ -81,3 +105,13 @@ discordClient.login("************************.******.***************************
 ### Other Changes
 
 - The optional options `max` and `min` of the `fetchNeko()` function have been removed
+
+## About
+
+Made by [**Thunder04**](https://github.com/Thunder04)
+
+The source code is available at [**GitHub**](https://github.com/nekos-best/nekos-best.js)
+
+License: [**MIT**](https://choosealicense.com/licenses/mit/)
+
+[![NekosBest](https://img.shields.io/npm/v/nekos-best.js?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/nekos-best.js) [![NekosBest](https://img.shields.io/npm/dm/nekos-best.js?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/nekos-best.js) [![NekosBest](https://img.shields.io/github/stars/nekos-best/nekos-best.js?color=yellow&label=Stars&logo=github&style=flat-square)](github.com/nekos-best/nekos-best.js)

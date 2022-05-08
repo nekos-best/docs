@@ -1,8 +1,4 @@
-# Using C\#
-
-Example added by: [Sylveon](https://github.com/Sylveon76)
-
-[![NekosBest](https://img.shields.io/nuget/v/NekosBestApiNet?color=white&logo=nuget&style=flat-square)](https://www.nuget.org/packages/NekosBestApiNet/) [![NekosBest](https://img.shields.io/nuget/dt/NekosBestApiNet?color=white&logo=nuget&style=flat-square)](https://www.nuget.org/packages/NekosBestApiNet/)
+# [![CS](https://cdn.discordapp.com/emojis/972378383147208744.webp?size=32&quality=lossless)](https://nekos.best/discord?ref=docs) C\#
 
 ---
 
@@ -125,3 +121,13 @@ public class ExampleClass
     => await _nekosBestApi.Hug();
 }
 ```
+
+## About
+
+Made by: [**Sylveon**](https://github.com/Sylveon76)
+
+The source code is available at [**GitHub**](https://github.com/Sylveon76/Nekos.Best-API)
+
+License: [**MIT**](https://choosealicense.com/licenses/mit/)
+
+[![NekosBest](https://img.shields.io/nuget/v/NekosBestApiNet?color=white&logo=nuget&style=flat-square)](https://www.nuget.org/packages/NekosBestApiNet/) [![NekosBest](https://img.shields.io/nuget/dt/NekosBestApiNet?color=white&logo=nuget&style=flat-square)](https://www.nuget.org/packages/NekosBestApiNet/) [![NekosBest](https://img.shields.io/github/stars/Sylveon76/Nekos.Best-API?color=yellow&label=Stars&logo=github&style=flat-square)](github.com/Sylveon76/Nekos.Best-API)

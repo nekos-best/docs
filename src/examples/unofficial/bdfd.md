@@ -1,6 +1,6 @@
-# Using BDFD
+<!-- markdownlint-disable MD040 -->
 
-Example added by: [oriel beck](https://github.com/oriel-beck)
+# BDFD
 
 ---
 
@@ -26,3 +26,7 @@ $image[$httpResult[results;0;url]]
 $footer[nekos.best API - Anime: $httpResult[results;0;anime_name]]
 $color[#e91e63]
 ```
+
+## About
+
+Made by: [**oriel beck**](https://github.com/oriel-beck)

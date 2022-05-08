@@ -1,8 +1,4 @@
-# Using Rust
-
-Example added by: [oaleaf](https://github.com/oaleaf)
-
-[![NekosBest](https://img.shields.io/crates/v/nekosbest?style=flat-square)](https://crates.io/crates/nekosbest) [![NekosBest](https://img.shields.io/crates/d/nekosbest?color=orange&style=flat-square)](https://crates.io/crates/nekosbest)
+# [![Rust](https://cdn.discordapp.com/emojis/972378381867941928.webp?size=24&quality=lossless)](https://nekos.best/discord?ref=docs) Rust
 
 ---
 
@@ -124,3 +120,13 @@ fn main() {
     Ok(())
 }
 ```
+
+## About
+
+Made by: [**Dinu Blanovschi**](https://github.com/dnbln)
+
+The source code is available at [**GitHub**](https://github.com/dnbln/nb-rs)
+
+License: [**CC0-1.0**](https://choosealicense.com/licenses/cc0-1.0/)
+
+[![NekosBest](https://img.shields.io/crates/v/nekosbest?style=flat-square)](https://crates.io/crates/nekosbest) [![NekosBest](https://img.shields.io/crates/d/nekosbest?color=orange&style=flat-square)](https://crates.io/crates/nekosbest) [![NekosBest](https://img.shields.io/github/stars/dnbln/nb-rs?color=yellow&label=Stars&logo=github&style=flat-square)](github.com/dnbln/nb-rs)
