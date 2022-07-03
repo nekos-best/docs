@@ -12,7 +12,6 @@ Our base URL is **`https://nekos.best/api/:version`**. Replace `:version` with o
 
 | Version | Status |
 |----|----|
-|  v1  |  Deprecated  |
 |  **v2**  |  Current  |
 
 ## Categories
