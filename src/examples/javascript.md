@@ -32,7 +32,7 @@ await getNeko()
 
 ### Installation
 
-`npm install nekos-best.js` | `yarn install nekos-best.js`
+`npm install nekos-best.js` | `yarn add nekos-best.js`
 
 ### Usage
 
