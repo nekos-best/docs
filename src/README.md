@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD036 -->
+
 # Introduction
 
 Welcome to [nekos.best](https://nekos.best)'s official documentation.
@@ -12,30 +14,40 @@ We focus on giving the best experience for our users and their projects, for fre
 
 ## Why nekos.best?
 
-**8 reasons to switch to us:**
+1. **No authorization required**
 
-1. No authorization needed. Not even an API key.
+    Unlike other APIs, you do not need to authenticate. No Tokens or API keys.
 
-2. Wide variety of endpoints. We currently have `35` of them.
+2. **Fully SFW**
 
-3. Our API is fully SFW. You will never worry about NSFW/lewd images or GIFs.
+    Our main focus on nekos.best is providing fully SFW images and GIFs.
 
-4. Organized assets. Images and GIFs are separated based by their category.
+3. **Crediting creators**
 
-5. Fast response times and 99.9% uptime. For projects that stability and performance matters.
+    Respecting creators' work is very important to us, that is why you get everything you need to know about the origin of the image or GIF.
 
-6. CORS is enabled for those who want to use our collection on their websites.
+4. **Fast and 99.9% uptime**
 
-7. Crediting creators of their work is very important for us. That's why you get everything you need about the origin of the images and GIFs.
+    The servers are located in the US, so you can be sure to get great response times with a 99.9% uptime.
 
-8. We listen to our community and their feedback.
+5. **Wide variety of endpoints**
+
+    There are about 35 endpoints and we are going to add many more in the future.
+
+6. **CORS enabled**
+
+    For our web developers out there, we have CORS enabled, so you can enjoy using the content on your websites.
+
+7. **Community**
+
+    The community is very important for us. We love to get feedback and suggestions to improve our API.
 
 ## Do you need help? Do you have any suggestions or feedback?
 
-Join our [Discord Server](https://nekos.best/discord?ref=docs) if you need any help.
+Join our [Discord server](https://nekos.best/discord?ref=docs) if you need any help.
 
-We accept suggestions and feedback in the [Discord Server](https://nekos.best/discord?ref=docs) and via email [contact@nekos.best](mailto:contact@nekos.best).
+We accept suggestions and feedback in the [Discord server](https://nekos.best/discord?ref=docs) and via email [contact@nekos.best](mailto:contact@nekos.best).
 
 ## Official links
 
-[Discord Server](https://nekos.best/discord?ref=docs) ・ [API Status](https://status.nekos.best) ・ [Patreon](https://patreon.com/nekos_best) ・ [GitHub](https://github.com/nekos-best)
+[Website](https://nekos.best) ・ [Discord server](https://nekos.best/discord?ref=docs) ・ [Status](https://status.nekos.best) ・ [GitHub](https://github.com/nekos-best)

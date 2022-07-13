@@ -17,9 +17,9 @@ If you have any questions, feel free to ask them in the [Discord server](https:/
 
 Thank you for taking your time to contribute, we really appreciate it.
 
-Please note that you can contribute only by [adding examples](#add-an-unofficial-example) and fixing any grammar mistakes. For anything else, please open a [new issue](https://github.com/nekos-best/docs/issues/new?labels=d-issue).
+Please note that you can contribute only by [adding examples](#adding-an-unofficial-example) and fixing any grammar mistakes. For anything else, please open a [new issue](https://github.com/nekos-best/docs/issues/new?labels=d-issue).
 
-To contribute, you must [fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) to make any changes and [create a new pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-requesthttps://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) after you are done. After you create a new pull request, wait patiently until a contributor reviews your pull request.
+To contribute, you must [fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) to make any changes and [create a new pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) after you are done. After you create a new pull request, wait patiently until a contributor reviews your pull request.
 
 ### Contribution Guidelines
 

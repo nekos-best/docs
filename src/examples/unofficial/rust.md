@@ -123,10 +123,8 @@ fn main() {
 
 ## About
 
-Made by: [**Dinu Blanovschi**](https://github.com/dnbln)
-
-The source code is available at [**GitHub**](https://github.com/dnbln/nb-rs)
-
-License: [**CC0-1.0**](https://choosealicense.com/licenses/cc0-1.0/)
-
-[![NekosBest](https://img.shields.io/crates/v/nekosbest?style=flat-square)](https://crates.io/crates/nekosbest) [![NekosBest](https://img.shields.io/crates/d/nekosbest?color=orange&style=flat-square)](https://crates.io/crates/nekosbest) [![NekosBest](https://img.shields.io/github/stars/dnbln/nb-rs?color=yellow&label=Stars&logo=github&style=flat-square)](github.com/dnbln/nb-rs)
+> Example added by: [**Dinu Blanovschi**](https://github.com/dnbln)
+>
+> The source code is available at [**GitHub**](https://github.com/dnbln/nb-rs)
+>
+> [![NekosBest](https://img.shields.io/crates/v/nekosbest?style=flat-square)](https://crates.io/crates/nekosbest) [![NekosBest](https://img.shields.io/crates/d/nekosbest?color=orange&style=flat-square)](https://crates.io/crates/nekosbest) [![NekosBest](https://img.shields.io/github/stars/dnbln/nb-rs?color=yellow&label=Stars&logo=github&style=flat-square)](https://github.com/dnbln/nb-rs)

@@ -23,8 +23,8 @@ import aiohttp
 
 async with aiohttp.ClientSession() as session:
     async with session.get("https://nekos.best/api/v2/neko") as resp:
-      data = await resp.json()
-      print(data["results"][0]["url"])
+        data = await resp.json()
+        print(data["results"][0]["url"])
 
 # https://nekos.best/api/v2/neko/0001.png
 ```
@@ -73,10 +73,8 @@ And therefore, `nekosbest.Results` and `nekosbest.SourceDetails` got removed too
 
 ## About
 
-Made by [**PredaaA**](https://github.com/PredaaA)
-
-The source code is available at [**GitHub**](https://github.com/nekos-best/nekos-best.py)
-
-License: [**AGPL-3.0**](https://choosealicense.com/licenses/agpl-3.0/)
-
-[![NekosBest](https://img.shields.io/pypi/v/nekosbest?logo=pypi&style=flat-square)](https://pypi.org/project/nekosbest/) [![NekosBest](https://img.shields.io/pypi/dm/nekosbest?color=blue&logo=pypi&style=flat-square)](https://pypi.org/project/nekosbest/) [![NekosBest](https://img.shields.io/github/stars/nekos-best/nekos-best.py?color=yellow&label=Stars&logo=github&style=flat-square)](github.com/nekos-best/nekos-best.py)
+> Created by [**PredaaA**](https://github.com/PredaaA)
+>
+> The source code is available at [**GitHub**](https://github.com/nekos-best/nekos-best.py)
+>
+> [![NekosBest](https://img.shields.io/pypi/v/nekosbest?logo=pypi&style=flat-square)](https://pypi.org/project/nekosbest/) [![NekosBest](https://img.shields.io/pypi/dm/nekosbest?color=blue&logo=pypi&style=flat-square)](https://pypi.org/project/nekosbest/) [![NekosBest](https://img.shields.io/github/stars/nekos-best/nekos-best.py?color=yellow&label=Stars&logo=github&style=flat-square)](https://github.com/nekos-best/nekos-best.py)
