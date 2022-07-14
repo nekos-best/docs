@@ -149,8 +149,8 @@ print(data[&quot;results&quot;][0][&quot;url&quot;])
 
 async with aiohttp.ClientSession() as session:
     async with session.get(&quot;https://nekos.best/api/v2/neko&quot;) as resp:
-      data = await resp.json()
-      print(data[&quot;results&quot;][0][&quot;url&quot;])
+        data = await resp.json()
+        print(data[&quot;results&quot;][0][&quot;url&quot;])
 
 # https://nekos.best/api/v2/neko/0001.png
 </code></pre>
@@ -185,10 +185,11 @@ loop.run_until_complete(get_img(&quot;neko&quot;, 2))
 <p><code>nekosbest.Result.source_details</code> has been removed. Source details are now in <code>Result</code>.<br />
 And therefore, <code>nekosbest.Results</code> and <code>nekosbest.SourceDetails</code> got removed too.</p>
 <h2 id="about"><a class="header" href="#about">About</a></h2>
-<p>Made by <a href="https://github.com/PredaaA"><strong>PredaaA</strong></a></p>
+<blockquote>
+<p>Created by <a href="https://github.com/PredaaA"><strong>PredaaA</strong></a></p>
 <p>The source code is available at <a href="https://github.com/nekos-best/nekos-best.py"><strong>GitHub</strong></a></p>
-<p>License: <a href="https://choosealicense.com/licenses/agpl-3.0/"><strong>AGPL-3.0</strong></a></p>
-<p><a href="https://pypi.org/project/nekosbest/"><img src="https://img.shields.io/pypi/v/nekosbest?logo=pypi&amp;style=flat-square" alt="NekosBest" /></a> <a href="https://pypi.org/project/nekosbest/"><img src="https://img.shields.io/pypi/dm/nekosbest?color=blue&amp;logo=pypi&amp;style=flat-square" alt="NekosBest" /></a> <a href="github.com/nekos-best/nekos-best.py"><img src="https://img.shields.io/github/stars/nekos-best/nekos-best.py?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
+<p><a href="https://pypi.org/project/nekosbest/"><img src="https://img.shields.io/pypi/v/nekosbest?logo=pypi&amp;style=flat-square" alt="NekosBest" /></a> <a href="https://pypi.org/project/nekosbest/"><img src="https://img.shields.io/pypi/dm/nekosbest?color=blue&amp;logo=pypi&amp;style=flat-square" alt="NekosBest" /></a> <a href="https://github.com/nekos-best/nekos-best.py"><img src="https://img.shields.io/github/stars/nekos-best/nekos-best.py?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
+</blockquote>
 
                     </main>
 

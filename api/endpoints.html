@@ -182,6 +182,41 @@
 }
 </code></pre>
 </blockquote>
+<h2 id="get-searchqueryxtypexcategoryxamountx"><a class="header" href="#get-searchqueryxtypexcategoryxamountx">GET <code>/search?query=X&amp;type=X&amp;category=X&amp;amount=X</code></a></h2>
+<p>The query parameter can be used to search for a specific phrase in the image or GIF source. Use the type query to get <strong><code>1</code> images</strong> or <strong><code>2</code> GIFs</strong> results.</p>
+<p>* Optional parameters: Use the category query for getting images or GIFs from a specific endpoint. The amount query may be used to retrieve multiple results at once.</p>
+<blockquote>
+<p><strong>Example:</strong> <a href="https://nekos.best/api/v2/search?query=Aramaru&amp;type=1">https://nekos.best/api/v2/search?query=Aramaru&amp;type=1</a></p>
+<p><strong>Returns:</strong></p>
+<pre><code class="language-json">{
+   &quot;results&quot;:[
+       {
+           &quot;artist_href&quot;:&quot;https://twitter.com/Aramarufox/&quot;,
+           &quot;artist_name&quot;:&quot;Aramarufox&quot;,
+           &quot;source_url&quot;:&quot;https://twitter.com/Aramarufox/status/1491744680999940101&quot;,
+           &quot;url&quot;:&quot;https://nekos.best/api/v2/kitsune/0090.png&quot;
+       }
+   ]
+}
+</code></pre>
+</blockquote>
+<blockquote>
+<p><strong>Example:</strong> <a href="https://nekos.best/api/v2/search?query=Senko&amp;type=2&amp;category=pat&amp;amount=2">https://nekos.best/api/v2/search?query=Senko&amp;type=2&amp;category=pat&amp;amount=2</a></p>
+<p><strong>Returns:</strong></p>
+<pre><code class="language-json">{
+   &quot;results&quot;:[
+       {
+           &quot;anime_name&quot;:&quot;Sewayaki Kitsune no Senko-san&quot;,
+           &quot;url&quot;:&quot;https://nekos.best/api/v2/pat/037.gif&quot;
+       },
+       {
+           &quot;anime_name&quot;:&quot;Sewayaki Kitsune no Senko-san&quot;,
+           &quot;url&quot;:&quot;https://nekos.best/api/v2/pat/036.gif&quot;
+       }
+   ]
+}
+</code></pre>
+</blockquote>
 <h2 id="get-categoryfilenameformat"><a class="header" href="#get-categoryfilenameformat">GET <code>/:category/:filename.:format</code></a></h2>
 <p>Gets a specific image from our categories. Replace <code>:filename</code> with the asset's filename and <code>:format</code> with the category's format.</p>
 <p><strong>Note:</strong> The asset's metadata are provided URL-encoded, in the response's headers under <code>anime_name</code>, <code>artist_name</code>, <code>artist_href</code> and <code>source_url</code>.</p>
