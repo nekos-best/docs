@@ -29,4 +29,4 @@ $color[#e91e63]
 
 ## About
 
-Made by: [**oriel beck**](https://github.com/oriel-beck)
+> Example added by: [**oriel beck**](https://github.com/oriel-beck)

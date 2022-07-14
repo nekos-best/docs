@@ -1,5 +1,3 @@
-<!-- markdownlint-disable MD028 -->
-
 # Reference
 
 ---

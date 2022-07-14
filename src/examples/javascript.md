@@ -108,10 +108,8 @@ discordClient.login("************************.******.***************************
 
 ## About
 
-Made by [**Thunder04**](https://github.com/Thunder04)
-
-The source code is available at [**GitHub**](https://github.com/nekos-best/nekos-best.js)
-
-License: [**MIT**](https://choosealicense.com/licenses/mit/)
-
-[![NekosBest](https://img.shields.io/npm/v/nekos-best.js?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/nekos-best.js) [![NekosBest](https://img.shields.io/npm/dm/nekos-best.js?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/nekos-best.js) [![NekosBest](https://img.shields.io/github/stars/nekos-best/nekos-best.js?color=yellow&label=Stars&logo=github&style=flat-square)](github.com/nekos-best/nekos-best.js)
+> Created by [**Thunder04**](https://github.com/Thunder04)
+>
+> The source code is available at [**GitHub**](https://github.com/nekos-best/nekos-best.js)
+>
+> [![NekosBest](https://img.shields.io/npm/v/nekos-best.js?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/nekos-best.js) [![NekosBest](https://img.shields.io/npm/dm/nekos-best.js?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/nekos-best.js) [![NekosBest](https://img.shields.io/github/stars/nekos-best/nekos-best.js?color=yellow&label=Stars&logo=github&style=flat-square)](https://github.com/nekos-best/nekos-best.js)

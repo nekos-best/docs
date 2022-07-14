@@ -124,10 +124,8 @@ public class ExampleClass
 
 ## About
 
-Made by: [**Sylveon**](https://github.com/Sylveon76)
-
-The source code is available at [**GitHub**](https://github.com/Sylveon76/Nekos.Best-API)
-
-License: [**MIT**](https://choosealicense.com/licenses/mit/)
-
-[![NekosBest](https://img.shields.io/nuget/v/NekosBestApiNet?color=white&logo=nuget&style=flat-square)](https://www.nuget.org/packages/NekosBestApiNet/) [![NekosBest](https://img.shields.io/nuget/dt/NekosBestApiNet?color=white&logo=nuget&style=flat-square)](https://www.nuget.org/packages/NekosBestApiNet/) [![NekosBest](https://img.shields.io/github/stars/Sylveon76/Nekos.Best-API?color=yellow&label=Stars&logo=github&style=flat-square)](github.com/Sylveon76/Nekos.Best-API)
+> Example added by: [**Pusheon**](https://github.com/Pusheon)
+>
+> The source code is available at [**GitHub**](https://github.com/Sylveon76/Nekos.Best-API)
+>
+> [![NekosBest](https://img.shields.io/nuget/v/NekosBestApiNet?color=white&logo=nuget&style=flat-square)](https://www.nuget.org/packages/NekosBestApiNet/) [![NekosBest](https://img.shields.io/nuget/dt/NekosBestApiNet?color=white&logo=nuget&style=flat-square)](https://www.nuget.org/packages/NekosBestApiNet/) [![NekosBest](https://img.shields.io/github/stars/Sylveon76/Nekos.Best-API?color=yellow&label=Stars&logo=github&style=flat-square)](https://github.com/Sylveon76/Nekos.Best-API)
