@@ -4,18 +4,14 @@
 
 ## Installation
 
-Add the following to your `Cargo.toml`:
-
 ```toml
 [dependencies]
-nekosbest = "0.11.0"
+nekosbest = "0.14.1"
 ```
 
-## Usage
+## Example
 
-Getting a single URL:
-
-```rust,noplaypen
+```rust, noplaypen
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let img_url: String = nekosbest::get(nekosbest::Category::Neko).await?.url;
@@ -24,9 +20,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-Multiple URLs:
+Or with an amount (Amount is capped at 20 by the server):
 
-```rust,noplaypen
+```rust, noplaypen
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let images = nekosbest::get_amount(nekosbest::Category::Neko, 20).await?.0;
@@ -35,11 +31,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
+Or if you already have a `reqwest::Client` that you want to use,
+use `get_with_client` and `get_with_client_amount` respectively.
+
 ## Details
 
-For `Category::Neko` (previously `Category::Nekos`) and `Category::Kitsune`:
+There is another property called `details`:
 
-```rust,noplaypen
+For `Category::Neko`, `Category::Husbando`, `Category::Kitsune`, `Category::Waifu` (Image endpoints):
+
+```rust, noplaypen
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let details = nekosbest::get(nekosbest::Category::Neko)
@@ -54,9 +55,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-Everything else:
+For everything else (GIF endpoints):
 
-```rust,noplaypen
+```rust, noplaypen
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let details = nekosbest::get(nekosbest::Category::Pat)
@@ -69,13 +70,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-### With the `strong-types` feature
+Or with the `strong-types` feature, bringing strong types guarantees for details, so no `unwrap` / `expect` for the details type:
 
-Note: this is an experimental feature, and may change at any time.
+**Warning**: Experimental, may change at any point in the future.
 
-For `Category::Neko`:
+Remember to add the `st_` in front of `get`, `get_amount`, `get_with_client` and `get_with_client_amount`.
 
-```rust,noplaypen
+Neko:
+
+```rust, noplaypen
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let resp = nekosbest::st_get::<nekosbest::Neko>().await?;
@@ -87,9 +90,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-Everything else:
+GIF:
 
-```rust,noplaypen
+```rust, noplaypen
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let details = nekosbest::st_get::<nekosbest::Pat>().await?.details;
@@ -98,21 +101,20 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-## The `local` feature
+By using the `local` feature, you can completely skip requests to the API.
 
-Skip requests to the API completely, generating urls locally from metadata pulled in during build time:
-
-```rust,noplaypen
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+```rust, noplaypen
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let img_url = nekosbest::local::Neko.get(); // requires the "local" feature
     println!("{}", img_url);
     Ok(())
 }
 ```
 
-Or with your own random number (the default is the thread RNG):
+Or if you have your own random number:
 
-```rust,noplaypen
+```rust, noplaypen
 fn main() {
     let your_random = unimplemented!();
     let img_url = nekosbest::local::Neko.get_random(your_random);
@@ -120,6 +122,13 @@ fn main() {
     Ok(())
 }
 ```
+
+Take a look at [the build script](build.rs) and [src/local.rs](src/local.rs) if
+you want to find out how it works.
+
+## Blocking client
+
+All functions become blocking when used with the "blocking" feature.
 
 ## About
 
