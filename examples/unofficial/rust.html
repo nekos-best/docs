@@ -135,30 +135,31 @@
                         <h1 id="rust"><a class="header" href="#rust"><a href="https://nekos.best/discord?ref=docs"><img src="https://cdn.discordapp.com/emojis/972378381867941928.webp?size=24&amp;quality=lossless" alt="Rust" /></a> Rust</a></h1>
 <hr />
 <h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<p>Add the following to your <code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">[dependencies]
-nekosbest = &quot;0.11.0&quot;
+nekosbest = &quot;0.14.1&quot;
 </code></pre>
-<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
-<p>Getting a single URL:</p>
-<pre><code class="language-rust noplaypen">#[tokio::main]
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let img_url: String = nekosbest::get(nekosbest::Category::Neko).await?.url;
     println!(&quot;{}&quot;, img_url);
     Ok(())
 }
 </code></pre>
-<p>Multiple URLs:</p>
-<pre><code class="language-rust noplaypen">#[tokio::main]
+<p>Or with an amount (Amount is capped at 20 by the server):</p>
+<pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let images = nekosbest::get_amount(nekosbest::Category::Neko, 20).await?.0;
     println!(&quot;{:?}&quot;, images);
     Ok(())
 }
 </code></pre>
+<p>Or if you already have a <code>reqwest::Client</code> that you want to use,
+use <code>get_with_client</code> and <code>get_with_client_amount</code> respectively.</p>
 <h2 id="details"><a class="header" href="#details">Details</a></h2>
-<p>For <code>Category::Neko</code> (previously <code>Category::Nekos</code>) and <code>Category::Kitsune</code>:</p>
-<pre><code class="language-rust noplaypen">#[tokio::main]
+<p>There is another property called <code>details</code>:</p>
+<p>For <code>Category::Neko</code>, <code>Category::Husbando</code>, <code>Category::Kitsune</code>, <code>Category::Waifu</code> (Image endpoints):</p>
+<pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::get(nekosbest::Category::Neko)
         .await?
@@ -171,8 +172,8 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     Ok(())
 }
 </code></pre>
-<p>Everything else:</p>
-<pre><code class="language-rust noplaypen">#[tokio::main]
+<p>For everything else (GIF endpoints):</p>
+<pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::get(nekosbest::Category::Pat)
         .await?
@@ -183,10 +184,11 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     Ok(())
 }
 </code></pre>
-<h3 id="with-the-strong-types-feature"><a class="header" href="#with-the-strong-types-feature">With the <code>strong-types</code> feature</a></h3>
-<p>Note: this is an experimental feature, and may change at any time.</p>
-<p>For <code>Category::Neko</code>:</p>
-<pre><code class="language-rust noplaypen">#[tokio::main]
+<p>Or with the <code>strong-types</code> feature, bringing strong types guarantees for details, so no <code>unwrap</code> / <code>expect</code> for the details type:</p>
+<p><strong>Warning</strong>: Experimental, may change at any point in the future.</p>
+<p>Remember to add the <code>st_</code> in front of <code>get</code>, <code>get_amount</code>, <code>get_with_client</code> and <code>get_with_client_amount</code>.</p>
+<p>Neko:</p>
+<pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let resp = nekosbest::st_get::&lt;nekosbest::Neko&gt;().await?;
     let details = resp.details();
@@ -196,30 +198,34 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     Ok(())
 }
 </code></pre>
-<p>Everything else:</p>
-<pre><code class="language-rust noplaypen">#[tokio::main]
+<p>GIF:</p>
+<pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::st_get::&lt;nekosbest::Pat&gt;().await?.details;
     println!(&quot;Anime name: {}&quot;, details.anime_name);
     Ok(())
 }
 </code></pre>
-<h2 id="the-local-feature"><a class="header" href="#the-local-feature">The <code>local</code> feature</a></h2>
-<p>Skip requests to the API completely, generating urls locally from metadata pulled in during build time:</p>
-<pre><code class="language-rust noplaypen">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+<p>By using the <code>local</code> feature, you can completely skip requests to the API.</p>
+<pre><code class="language-rust  noplaypen">#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let img_url = nekosbest::local::Neko.get(); // requires the &quot;local&quot; feature
     println!(&quot;{}&quot;, img_url);
     Ok(())
 }
 </code></pre>
-<p>Or with your own random number (the default is the thread RNG):</p>
-<pre><code class="language-rust noplaypen">fn main() {
+<p>Or if you have your own random number:</p>
+<pre><code class="language-rust  noplaypen">fn main() {
     let your_random = unimplemented!();
     let img_url = nekosbest::local::Neko.get_random(your_random);
     println!(&quot;{}&quot;, img_url);
     Ok(())
 }
 </code></pre>
+<p>Take a look at <a href="build.rs">the build script</a> and <a href="src/local.rs">src/local.rs</a> if
+you want to find out how it works.</p>
+<h2 id="blocking-client"><a class="header" href="#blocking-client">Blocking client</a></h2>
+<p>All functions become blocking when used with the &quot;blocking&quot; feature.</p>
 <h2 id="about"><a class="header" href="#about">About</a></h2>
 <blockquote>
 <p>Example added by: <a href="https://github.com/dnbln"><strong>Dinu Blanovschi</strong></a></p>
