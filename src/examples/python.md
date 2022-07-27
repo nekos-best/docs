@@ -6,27 +6,51 @@
 
 #### Using `requests`
 
+This method is recommended for synchronous programming.
+
 ```py
 import requests
 
-resp = requests.get("https://nekos.best/api/v2/neko")
-data = resp.json()
-print(data["results"][0]["url"])
 
-# https://nekos.best/api/v2/neko/0001.png
+def get_imgs(endpoint: str, amount: int = 1) -> list[dict[str, str]]:
+    resp = requests.get(f"https://nekos.best/api/v2/{endpoint}?amount={amount}")
+    data: dict[str, list[dict[str, str]]] = resp.json()
+    
+    return data.get("results")
+
+
+for data in get_imgs("neko", 2):
+    print(data.get("url"))
+
+# https://nekos.best/api/v2/neko/0653.png
+# https://nekos.best/api/v2/neko/0338.png
 ```
 
 #### Using `aiohttp` (async)
 
+Asynchronous programming is especially helpful in web-development or discord-bot programming. Many Python frameworks (f.e. FastAPI) can directly build and execute asynchronous functions, which eliminates the need to use `asyncio`.
+
 ```py
-import aiohttp
+from aiohttp import ClientSession
+from asyncio import get_event_loop
 
-async with aiohttp.ClientSession() as session:
-    async with session.get("https://nekos.best/api/v2/neko") as resp:
-        data = await resp.json()
-        print(data["results"][0]["url"])
 
-# https://nekos.best/api/v2/neko/0001.png
+async def get_img(endpoint: str, amount: int = 1) -> list[dict[str, str]]:
+    async with ClientSession() as session:
+        resp = await session.get(f"https://nekos.best/api/v2/{endpoint}?amount={amount}")
+        data: dict[str, list[str]] = await resp.json()
+
+        return data.get("results")
+
+
+loop = get_event_loop()
+data = loop.run_until_complete(get_img("neko", 2))
+
+for img in data:
+    print(img.get("url"))
+
+# https://nekos.best/api/v2/neko/0742.png
+# https://nekos.best/api/v2/neko/0590.png
 ```
 
 ## Using our Wrapper
