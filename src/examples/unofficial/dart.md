@@ -18,29 +18,26 @@ Import the package to your project and use the methods.
 import 'package:nekos_best/nekos_best.dart' as nb;
 
 void main() async {
-    var neko = await nb.fetch('neko');
+    var neko = await nb.fetch(endpoint: 'neko');
     print(neko);
 }
 ```
-#### Fetch a single value:
+The package only exports a single function `fetch`
 ```dart
-import 'package:nekos_best/nekos_best.dart' as nb;
-
-// Provide a category
-var neko = await nb.fetch('neko');
-print(neko);
-// Without a category. It'll use a random one
-var random = await nb.fetch();
-print(random);
+var random = nb.fetch();
+var single_neko = nb.fetch(endpoint: 'neko');
+var multi_neko = nb.fetch(endpoint: 'neko', amount: 5);
 ```
-#### Fetch multiple values:
-Amount is capped at 20. If unspecified, it defaults to 5.
+You can specify the amount of results you want, or the category from which to get result. Both are optional. By default amount is set to 1. If endpoint is unspecified, it uses a randomly generated endpoint.
+
+The function returns a list of class [NBResponse](https://github.com/Yakiyo/nekos_best_dart/blob/main/README.md#response). You can access it's fields with dot notation.
 ```dart
-import 'package:nekos_best/nekos_best.dart' as nb;
-
-var multipleBaka = await nb.fetchMultiple('baka', amount: 10);
-print(multipleBaka);
+var baka = await nb.fetch(endpoint: 'baka');
+// It always returns a list of NBResponse, so 
+// we need to get the first element from the list
+print("url: ${baka[0].url}, source: ${baka[0].anime_name}");
 ```
+
 More details on the package can be found in the repo's [README](https://github.com/Yakiyo/nekos_best_dart#readme). Example is in the [example](https://github.com/Yakiyo/nekos_best_dart/tree/main/example) directory.
 
 ## Example without wrapper
