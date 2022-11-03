@@ -132,19 +132,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="dart"><a class="header" href="#dart"><a href="https://nekos.best/discord?ref=docs"><img src="https://i.imgur.com/3yRL7Oi.png" width="40" alt="Dart"></a> Dart</a></h1>
-<ul>
-<li><a href="#example-with-a-package">With Wrapper</a></li>
-<li><a href="#example-without-wrapper">Without Wrapper</a></li>
-</ul>
-<h2 id="example-with-a-package"><a class="header" href="#example-with-a-package">Example with a package</a></h2>
-<h3 id="installation"><a class="header" href="#installation">Installation</a></h3>
-<p>Add the Dart <a href="https://pub.dev/packages/nekos_best">nekos_best</a> package to your project</p>
+                        <!-- markdownlint-disable MD014 -->
+<h1 id="dart"><a class="header" href="#dart"><a href="https://nekos.best/discord?ref=docs"><img src="https://cdn.discordapp.com/emojis/1037721964162330764.webp?size=32&amp;quality=lossless" alt="CS" /></a> Dart</a></h1>
+<hr />
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>Add the Dart <a href="https://pub.dev/packages/nekos_best"><code>nekos_best</code></a> package to your project:</p>
 <pre><code class="language-bash">$ dart pub add nekos_best
 </code></pre>
-<h3 id="usage"><a class="header" href="#usage">Usage</a></h3>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
 <p>Import the package to your project and use the methods.</p>
-<pre><code class="language-dart">import 'package:nekos_best/nekos_best.dart' as nb;
+<pre><code class="language-c">import 'package:nekos_best/nekos_best.dart' as nb;
 
 void main() async {
     var neko = await nb.fetch(endpoint: 'neko');
@@ -152,21 +149,21 @@ void main() async {
 }
 </code></pre>
 <p>The package only exports a single function <code>fetch</code></p>
-<pre><code class="language-dart">var random = nb.fetch();
+<pre><code class="language-c">var random = nb.fetch();
 var single_neko = nb.fetch(endpoint: 'neko');
 var multi_neko = nb.fetch(endpoint: 'neko', amount: 5);
 </code></pre>
-<p>You can specify the amount of results you want, or the category from which to get result. Both are optional. By default amount is set to 1. If endpoint is unspecified, it uses a randomly generated endpoint.</p>
+<p>You can specify the amount of results you want, or the category from which to get the result. Both are optional. By default, amount is set to 1. If the endpoint is unspecified, it uses a randomly chosen endpoint.</p>
 <p>The function returns a list of class <a href="https://github.com/Yakiyo/nekos_best_dart/blob/main/README.md#response">NBResponse</a>. You can access it's fields with dot notation.</p>
-<pre><code class="language-dart">var baka = await nb.fetch(endpoint: 'baka');
+<pre><code class="language-c">var baka = await nb.fetch(endpoint: 'baka');
 // It always returns a list of NBResponse, so 
 // we need to get the first element from the list
 print(&quot;url: ${baka[0].url}, source: ${baka[0].anime_name}&quot;);
 </code></pre>
-<p>More details on the package can be found in the repo's <a href="https://github.com/Yakiyo/nekos_best_dart#readme">README</a>. Example is in the <a href="https://github.com/Yakiyo/nekos_best_dart/tree/main/example">example</a> directory.</p>
-<h2 id="example-without-wrapper"><a class="header" href="#example-without-wrapper">Example without wrapper</a></h2>
+<p>More details on the package can be found in the repo's <a href="https://github.com/Yakiyo/nekos_best_dart#readme">README</a>. The example is in the <a href="https://github.com/Yakiyo/nekos_best_dart/tree/main/example">example</a> directory.</p>
+<h3 id="example-without-wrapper"><a class="header" href="#example-without-wrapper">Example without wrapper</a></h3>
 <p>Add <a href="https://pub.dev/packages/http">http</a> to your project and import it.</p>
-<pre><code class="language-dart">import 'package:http/http.dart' as http;
+<pre><code class="language-c">import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
 void main() async {
@@ -178,9 +175,9 @@ void main() async {
 </code></pre>
 <h2 id="about"><a class="header" href="#about">About</a></h2>
 <blockquote>
-<p>Example by <a href="https://github.com/Yakiyo">Yakiyo</a></p>
-<p>Package source code is available on <a href="https://github.com/Yakiyo/nekos_best_dart">Github</a></p>
-<p><a href="https://pub.dev/packages/nekos_best"><img src="https://img.shields.io/pub/v/nekos_best.svg" alt="Pub Package" /></a> <a href="https://github.com/Yakiyo/nekos_best_dart"><img src="https://img.shields.io/github/stars/Yakiyo/nekos_best_dart?style=social" alt="Github" /></a></p>
+<p>Example added by: <a href="https://github.com/Yakiyo"><strong>Yakiyo</strong></a></p>
+<p>Package source code is available on <a href="https://github.com/Yakiyo/nekos_best_dart"><strong>Github</strong></a></p>
+<p><a href="https://pub.dev/packages/nekos_best"><img src="https://img.shields.io/pub/v/nekos_best?logo=dart&amp;style=flat-square&amp;label=Version" alt="NekosBest" /></a> <a href="https://pub.dev/packages/nekos_best"><img src="https://img.shields.io/pub/popularity/nekos_best?color=blue&amp;logo=dart&amp;style=flat-square&amp;label=Popularity" alt="NekosBest" /></a> <a href="https://github.com/Yakiyo/nekos_best_dart"><img src="https://img.shields.io/github/stars/Yakiyo/nekos_best_dart?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
 </blockquote>
 
                     </main>
