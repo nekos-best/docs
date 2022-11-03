@@ -14,6 +14,7 @@
   <!--          ADD YOUR EXAMPLE UNDER HERE          -->
   - [BDFD](examples/unofficial/bdfd.md)
   - [C#](examples/unofficial/csharp.md)
+  - [Dart](examples/unofficial/dart.md)
   - [Rust](examples/unofficial/rust.md)
   <!--             PLEASE ALPHABETICALLY              -->
 
