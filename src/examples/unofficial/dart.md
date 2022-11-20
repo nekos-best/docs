@@ -17,34 +17,41 @@ $ dart pub add nekos_best
 Import the package to your project and use the methods.
 
 ```c
-import 'package:nekos_best/nekos_best.dart' as nb;
+import 'package:nekos_best/nekos_best.dart' show fetch, Client;
 
 void main() async {
-    var neko = await nb.fetch(endpoint: 'neko');
+    // Use the `fetch` function to fetch a random neko
+    var neko = await fetch(endpoint: 'neko');
     print(neko);
+
+    // Alternatively you can initiate a `Client` class which
+    // provides more methods and functions
+    var client = Client();
+
+    // `Client.fetch` method
+    var baka = client.fetch(endpoint: 'baka');
+    // `Client.fetch` for a random category
+    var random = client.fetch();
+    // `Client.fetch` with an amount
+    var five_nekos = client.fetch(endpoint: 'baka', amount: 5);
+    // `Client.fetchFile` method
+    var kitsune_file = client.fetchFile('kitsune');
+    // `Client.search` method
+    var search = client.search('Gochuumon wa Usagi Desuka??');
 }
 ```
-
-The package only exports a single function `fetch`
-
-```c
-var random = nb.fetch();
-var single_neko = nb.fetch(endpoint: 'neko');
-var multi_neko = nb.fetch(endpoint: 'neko', amount: 5);
-```
-
-You can specify the amount of results you want, or the category from which to get the result. Both are optional. By default, amount is set to 1. If the endpoint is unspecified, it uses a randomly chosen endpoint.
-
-The function returns a list of class [NBResponse](https://github.com/Yakiyo/nekos_best_dart/blob/main/README.md#response). You can access it's fields with dot notation.
+The package uses [NBResponse](https://pub.dev/documentation/nekos_best/latest/nekos_best/NBResonse-class.html) and [NBBufferResponse](https://pub.dev/documentation/nekos_best/latest/nekos_best/NBBufferResonse-class.html) classes in it's return values. You can access the fields with dot notation.
 
 ```c
-var baka = await nb.fetch(endpoint: 'baka');
-// It always returns a list of NBResponse, so 
+var baka = await client.fetch(endpoint: 'baka');
+// It always returns a List<NBResponse>, so 
 // we need to get the first element from the list
 print("url: ${baka[0].url}, source: ${baka[0].anime_name}");
 ```
+See [example/struct_example.dart](https://github.com/Yakiyo/nekos_best_dart/blob/main/example/structs_example.dart) for details and consult the [Api Reference](https://pub.dev/documentation/nekos_best/latest/nekos_best/nekos_best-library.html)
 
-More details on the package can be found in the repo's [README](https://github.com/Yakiyo/nekos_best_dart#readme). The example is in the [example](https://github.com/Yakiyo/nekos_best_dart/tree/main/example) directory.
+
+More details on the package can be found in the repo's [README](https://github.com/Yakiyo/nekos_best_dart#readme). Examples on all methods, usage, classes are in the [example](https://github.com/Yakiyo/nekos_best_dart/tree/main/example) directory.
 
 ### Example without wrapper
 
