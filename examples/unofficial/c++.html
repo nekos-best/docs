@@ -132,9 +132,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="nekos-best"><a class="header" href="#nekos-best">nekos-best++</a></h1>
-<p>C++ API wrapper for <a href="https://nekos.best/">nekos.best</a>,
-<a href="https://docs.nekos.best/">API Documentation</a>.</p>
+                        <!-- markdownlint-disable MD010 MD001 MD026 -->
+<h1 id="c"><a class="header" href="#c"><a href="https://nekos.best/discord?ref=docs"><img src="https://cdn.discordapp.com/emojis/1043849608230608937.webp?size=32&amp;quality=lossless" alt="CPP" /></a> C++</a></h1>
+<hr />
 <h2 id="dependencies"><a class="header" href="#dependencies">Dependencies</a></h2>
 <ul>
 <li><a href="https://github.com/jpbarrette/curlpp/">curlpp</a></li>
@@ -142,21 +142,21 @@
 <li><a href="https://github.com/nlohmann/json">nlohmann/json</a> (included)</li>
 </ul>
 <h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
-<p>Very simple to use and straightforward:</p>
+<h4 id="simple-request"><a class="header" href="#simple-request">Simple request:</a></h4>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 #include &quot;nekos-best++.hpp&quot;
 
 int main() {
 	nekos_best::QueryResult result_struct = nekos_best::fetch(&quot;neko&quot;, 2);
 
-	for (const nekos_best::Meta&amp; data : result_struct.results) {
-		printf(&quot;Got url: %s\n&quot;, data.url.c_str());
-	}
+for (const nekos_best::Meta&amp; data : result_struct.results) {
+	printf(&quot;Got url: %s\n&quot;, data.url.c_str());
+}
 
-	return 0;
+return 0;
 }
 </code></pre>
-<p>Get a list of available endpoint:</p>
+<h4 id="get-a-list-of-available-endpoint"><a class="header" href="#get-a-list-of-available-endpoint">Get a list of available endpoint</a></h4>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 #include &quot;nekos-best++.hpp&quot;
 
@@ -179,6 +179,12 @@ int main() {
 </code></pre>
 <p>Every request is blocking, you can simply use thread if you like.</p>
 <p>Read and compile example files for demonstration.</p>
+<h2 id="about"><a class="header" href="#about">About</a></h2>
+<blockquote>
+<p>Example added by: <a href="https://github.com/Neko-Life"><strong>Neko-Life</strong></a></p>
+<p>The source code is available at <a href="https://github.com/Neko-Life/nekos-bestpp"><strong>GitHub</strong></a></p>
+<p><a href="https://github.com/Neko-Life/nekos-bestpp"><img src="https://img.shields.io/github/stars/Neko-Life/nekos-bestpp?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
+</blockquote>
 
                     </main>
 
