@@ -1,15 +1,18 @@
-# nekos-best++
-C++ API wrapper for [nekos.best](https://nekos.best/),
-[API Documentation](https://docs.nekos.best/).
+<!-- markdownlint-disable MD010 MD001 MD026 -->
+
+# [![CPP](https://cdn.discordapp.com/emojis/1043849608230608937.webp?size=32&quality=lossless)](https://nekos.best/discord?ref=docs) C++
+
+---
 
 ## Dependencies
+
 - [curlpp](https://github.com/jpbarrette/curlpp/)
 - libcurl
 - [nlohmann/json](https://github.com/nlohmann/json) (included)
 
 ## Usage
 
-Very simple to use and straightforward:
+#### Simple request:
 
 ```cpp
 #include <stdio.h>
@@ -18,15 +21,15 @@ Very simple to use and straightforward:
 int main() {
 	nekos_best::QueryResult result_struct = nekos_best::fetch("neko", 2);
 
-	for (const nekos_best::Meta& data : result_struct.results) {
-		printf("Got url: %s\n", data.url.c_str());
-	}
+for (const nekos_best::Meta& data : result_struct.results) {
+	printf("Got url: %s\n", data.url.c_str());
+}
 
-	return 0;
+return 0;
 }
 ```
 
-Get a list of available endpoint:
+#### Get a list of available endpoint
 
 ```cpp
 #include <stdio.h>
@@ -53,3 +56,11 @@ int main() {
 Every request is blocking, you can simply use thread if you like.
 
 Read and compile example files for demonstration.
+
+## About
+
+> Example added by: [**Neko-Life**](https://github.com/Neko-Life)
+>
+> The source code is available at [**GitHub**](https://github.com/Neko-Life/nekos-bestpp)
+>
+> [![NekosBest](https://img.shields.io/github/stars/Neko-Life/nekos-bestpp?color=yellow&label=Stars&logo=github&style=flat-square)](https://github.com/Neko-Life/nekos-bestpp)
