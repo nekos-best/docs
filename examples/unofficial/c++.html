@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>BDFD - nekos.best API</title>
+        <title>C++ - nekos.best API</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The official nekos.best API documentation.">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="../../api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="../../api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="../../examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../../examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../examples/unofficial/bdfd.html" class="active"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/c++.html"><strong aria-hidden="true">5.3.</strong> C++</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/dart.html"><strong aria-hidden="true">5.4.</strong> Dart</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/rust.html"><strong aria-hidden="true">5.5.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="../../legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="../../legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="../../api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="../../api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="../../examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../../examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/c++.html" class="active"><strong aria-hidden="true">5.3.</strong> C++</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/dart.html"><strong aria-hidden="true">5.4.</strong> Dart</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/rust.html"><strong aria-hidden="true">5.5.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="../../legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="../../legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -132,39 +132,62 @@
 
                 <div id="content" class="content">
                     <main>
-                        <!-- markdownlint-disable MD040 -->
-<h1 id="bdfd"><a class="header" href="#bdfd">BDFD</a></h1>
-<hr />
-<h2 id="getting-a-image"><a class="header" href="#getting-a-image">Getting a Image</a></h2>
-<pre><code>$nomention
-$httpGet[https://nekos.best/api/v2/neko]
-$title[Here is a Neko for you!]
-$description[**Source:** $httpResult[results;0;source_url]]
-$image[$httpResult[results;0;url]]
-$footer[nekos.best API]
-$color[#e91e63]
+                        <h1 id="nekos-best"><a class="header" href="#nekos-best">nekos-best++</a></h1>
+<p>C++ API wrapper for <a href="https://nekos.best/">nekos.best</a>,
+<a href="https://docs.nekos.best/">API Documentation</a>.</p>
+<h2 id="dependencies"><a class="header" href="#dependencies">Dependencies</a></h2>
+<ul>
+<li><a href="https://github.com/jpbarrette/curlpp/">curlpp</a></li>
+<li>libcurl</li>
+<li><a href="https://github.com/nlohmann/json">nlohmann/json</a> (included)</li>
+</ul>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<p>Very simple to use and straightforward:</p>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+#include &quot;nekos-best++.hpp&quot;
+
+int main() {
+	nekos_best::QueryResult result_struct = nekos_best::fetch(&quot;neko&quot;, 2);
+
+	for (const nekos_best::Meta&amp; data : result_struct.results) {
+		printf(&quot;Got url: %s\n&quot;, data.url.c_str());
+	}
+
+	return 0;
+}
 </code></pre>
-<h2 id="getting-a-gif"><a class="header" href="#getting-a-gif">Getting a GIF</a></h2>
-<pre><code>$nomention
-$httpGet[https://nekos.best/api/v2/hug]
-$description[&lt;@$authorID&gt; hugged &lt;@$mentioned[1]&gt;]
-$image[$httpResult[results;0;url]]
-$footer[nekos.best API - Anime: $httpResult[results;0;anime_name]]
-$color[#e91e63]
+<p>Get a list of available endpoint:</p>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+#include &quot;nekos-best++.hpp&quot;
+
+int main() {
+	const std::map&lt;std::string, nekos_best::EndpointSpec&gt; res = nekos_best::get_available_endpoints();
+
+	for (const auto&amp; d : res) {
+		printf(&quot;[RESULT] res:\n%s\n&quot;, d.second.json_result.dump(2).c_str());
+		printf(&quot;KEY: \&quot;%s\&quot;\n&quot;, d.first.c_str());
+
+		printf(&quot;FORMAT: \&quot;%s\&quot;\n&quot;, d.second.format.c_str());
+		printf(&quot;MAX: \&quot;%s\&quot;\n&quot;, d.second.max.c_str());
+		printf(&quot;MIN: \&quot;%s\&quot;\n&quot;, d.second.min.c_str());
+		printf(&quot;NAME: \&quot;%s\&quot;\n&quot;, d.second.name.c_str());
+		printf(&quot;\n&quot;);
+	}
+
+	return 0;
+}
 </code></pre>
-<h2 id="about"><a class="header" href="#about">About</a></h2>
-<blockquote>
-<p>Example added by: <a href="https://github.com/oriel-beck"><strong>oriel beck</strong></a></p>
-</blockquote>
+<p>Every request is blocking, you can simply use thread if you like.</p>
+<p>Read and compile example files for demonstration.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../examples/unofficial/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../examples/unofficial/csharp.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../../examples/unofficial/csharp.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../examples/unofficial/dart.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -173,10 +196,10 @@ $color[#e91e63]
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../examples/unofficial/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../examples/unofficial/csharp.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../../examples/unofficial/csharp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../examples/unofficial/dart.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
