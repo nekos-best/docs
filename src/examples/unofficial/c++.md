@@ -33,7 +33,7 @@ Get a list of available endpoint:
 #include "nekos-best++.hpp"
 
 int main() {
-	const std::map<std::string, nekos_best::EndpointSpec> res = nekos_best::get_available_endpoint();
+	const std::map<std::string, nekos_best::EndpointSpec> res = nekos_best::get_available_endpoints();
 
 	for (const auto& d : res) {
 		printf("[RESULT] res:\n%s\n", d.second.json_result.dump(2).c_str());
