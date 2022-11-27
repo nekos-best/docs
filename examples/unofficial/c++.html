@@ -147,13 +147,29 @@
 #include &quot;nekos-best++.hpp&quot;
 
 int main() {
-	nekos_best::QueryResult result_struct = nekos_best::fetch(&quot;neko&quot;, 2);
+	// init the client first to cache all available endpoints for it to be able to get random endpoint
+	nekos_best::init();
 
-for (const nekos_best::Meta&amp; data : result_struct.results) {
-	printf(&quot;Got url: %s\n&quot;, data.url.c_str());
-}
+	printf(&quot;base_url: %s\n&quot;, nekos_best::get_base_url().c_str());
+	nekos_best::QueryResult result_struct = nekos_best::fetch(&quot;&quot;, 5);
 
-return 0;
+	// check the response
+	const nekos_best::Response res = nekos_best::get_last_request_response();
+
+	printf(&quot;[RESPONSE] STATUS_CODE: %ld\n&quot;, res.status_code);
+	printf(&quot;[RESPONSE] HEADERS:\n&quot;);
+
+	for (const auto header : res.headers)
+		printf(&quot;\&quot;%s\&quot;: \&quot;%s\&quot;\n&quot;, header.first.c_str(), header.second.c_str());
+
+	printf(&quot;\n&quot;);
+
+	printf(&quot;[RESPONSE] JSON:\n%s\n\n&quot;, res.raw_json.dump(2).c_str());
+	for (const nekos_best::Meta&amp; data : result_struct.results) {
+		printf(&quot;Got url: %s\n&quot;, data.url.c_str());
+	}
+
+	return 0;
 }
 </code></pre>
 <h4 id="get-a-list-of-available-endpoint"><a class="header" href="#get-a-list-of-available-endpoint">Get a list of available endpoint</a></h4>
@@ -161,13 +177,16 @@ return 0;
 #include &quot;nekos-best++.hpp&quot;
 
 int main() {
+	printf(&quot;%s\n&quot;, nekos_best::get_base_url().c_str());
+
+	// as we call get_available_endpoints() here thus caching the endpoints data from the API,
+	// we don't need to initialize the client anymore.
 	const std::map&lt;std::string, nekos_best::EndpointSpec&gt; res = nekos_best::get_available_endpoints();
 
 	for (const auto&amp; d : res) {
-		printf(&quot;[RESULT] res:\n%s\n&quot;, d.second.json_result.dump(2).c_str());
 		printf(&quot;KEY: \&quot;%s\&quot;\n&quot;, d.first.c_str());
 
-		printf(&quot;FORMAT: \&quot;%s\&quot;\n&quot;, d.second.format.c_str());
+		printf(&quot;FORMAT: \&quot;%s\&quot;\n&quot;, nekos_best::get_str_format(d.second.format).c_str());
 		printf(&quot;MAX: \&quot;%s\&quot;\n&quot;, d.second.max.c_str());
 		printf(&quot;MIN: \&quot;%s\&quot;\n&quot;, d.second.min.c_str());
 		printf(&quot;NAME: \&quot;%s\&quot;\n&quot;, d.second.name.c_str());
@@ -177,6 +196,8 @@ int main() {
 	return 0;
 }
 </code></pre>
+<p>Recommended to check for last response result after every fetch by calling get_last_request_response(),
+helps to determine whether a request failed or succeeded.</p>
 <p>Every request is blocking, you can simply use thread if you like.</p>
 <p>Read and compile example files for demonstration.</p>
 <h2 id="about"><a class="header" href="#about">About</a></h2>
