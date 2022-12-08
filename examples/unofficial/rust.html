@@ -144,16 +144,14 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let img_url: String = nekosbest::get(nekosbest::Category::Neko).await?.url;
     println!(&quot;{}&quot;, img_url);
     Ok(())
-}
-</code></pre>
+}</code></pre>
 <p>Or with an amount (Amount is capped at 20 by the server):</p>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let images = nekosbest::get_amount(nekosbest::Category::Neko, 20).await?.0;
     println!(&quot;{:?}&quot;, images);
     Ok(())
-}
-</code></pre>
+}</code></pre>
 <p>Or if you already have a <code>reqwest::Client</code> that you want to use,
 use <code>get_with_client</code> and <code>get_with_client_amount</code> respectively.</p>
 <h2 id="details"><a class="header" href="#details">Details</a></h2>
@@ -170,8 +168,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     println!(&quot;Artist: {}&quot;, details.artist_name);
     println!(&quot;Artist link: {}&quot;, details.artist_href);
     Ok(())
-}
-</code></pre>
+}</code></pre>
 <p>For everything else (GIF endpoints):</p>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
@@ -182,8 +179,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
         .unwrap();
     println!(&quot;Anime name: {}&quot;, details.anime_name);
     Ok(())
-}
-</code></pre>
+}</code></pre>
 <p>Or with the <code>strong-types</code> feature, bringing strong types guarantees for details, so no <code>unwrap</code> / <code>expect</code> for the details type:</p>
 <p><strong>Warning</strong>: Experimental, may change at any point in the future.</p>
 <p>Remember to add the <code>st_</code> in front of <code>get</code>, <code>get_amount</code>, <code>get_with_client</code> and <code>get_with_client_amount</code>.</p>
@@ -196,32 +192,28 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     println!(&quot;Artist link: {}&quot;, details.artist_href);
     println!(&quot;Source: {}&quot;, details.source_url);
     Ok(())
-}
-</code></pre>
+}</code></pre>
 <p>GIF:</p>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::st_get::&lt;nekosbest::Pat&gt;().await?.details;
     println!(&quot;Anime name: {}&quot;, details.anime_name);
     Ok(())
-}
-</code></pre>
+}</code></pre>
 <p>By using the <code>local</code> feature, you can completely skip requests to the API.</p>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let img_url = nekosbest::local::Neko.get(); // requires the &quot;local&quot; feature
     println!(&quot;{}&quot;, img_url);
     Ok(())
-}
-</code></pre>
+}</code></pre>
 <p>Or if you have your own random number:</p>
 <pre><code class="language-rust  noplaypen">fn main() {
     let your_random = unimplemented!();
     let img_url = nekosbest::local::Neko.get_random(your_random);
     println!(&quot;{}&quot;, img_url);
     Ok(())
-}
-</code></pre>
+}</code></pre>
 <p>Take a look at <a href="build.rs">the build script</a> and <a href="src/local.rs">src/local.rs</a> if
 you want to find out how it works.</p>
 <h2 id="blocking-client"><a class="header" href="#blocking-client">Blocking client</a></h2>
