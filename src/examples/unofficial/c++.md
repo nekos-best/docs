@@ -76,6 +76,7 @@ Recommended to check for last response result after every fetch by calling get_l
 helps to determine whether a request failed or succeeded.
 
 You can check whether you're rate limited from making any more request to an endpoint with the is_rate_limited() function.
+Get the RateLimitInfo struct of an endpoint by calling get_rate_limit_info().
 
 Every request is blocking, you can simply use thread if you like. Use the ns_mutex mutex for thread safety.
 
