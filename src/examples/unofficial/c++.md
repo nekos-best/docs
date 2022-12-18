@@ -45,7 +45,7 @@ int main() {
 }
 ```
 
-#### Get a list of available endpoint
+#### Get a list of available endpoint:
 
 ```cpp
 #include <stdio.h>
@@ -72,7 +72,7 @@ int main() {
 }
 ```
 
-Downloading:
+#### Downloading:
 
 ```cpp
 std::ostringstream download_stream;
