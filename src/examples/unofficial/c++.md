@@ -72,6 +72,33 @@ int main() {
 }
 ```
 
+Downloading:
+
+```cpp
+std::ostringstream download_stream;
+// 					get random stuff
+nekos_best::Meta meta = nekos_best::fetch_single("", "", nekos_best::if_none, &download_stream);
+
+std::ofstream file;
+
+// no image info from the API, we can just name it this for now
+// or better specify endpoint you know which gives which
+// and have a proper filename with an extension
+file.open("image", std::ios::out);
+
+if (!file.is_open()) {
+	fprintf(stderr, "[download ERROR] Can't open stream for writing\n");
+}
+else {
+	// get header size
+	const auto response = nekos_best::get_last_request_response();
+	// 		strip header from actual image data
+	file << download_stream.str().substr(response.header_size);
+	file.close();
+	printf("Image saved to \'image\'\n");
+}
+```
+
 Recommended to check for last response result after every fetch by calling get_last_request_response(),
 helps to determine whether a request failed or succeeded.
 
