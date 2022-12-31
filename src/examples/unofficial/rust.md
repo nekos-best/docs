@@ -2,11 +2,12 @@
 
 ---
 
-## Installation
+
+## Usage
 
 ```toml
 [dependencies]
-nekosbest = "0.14.1"
+nekosbest = "0.15"
 ```
 
 ## Example
@@ -20,7 +21,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-Or with an amount (Amount is capped at 20 by the server):
+Or with an amount (amount is capped at 20 by the server):
 
 ```rust, noplaypen
 #[tokio::main]
@@ -34,11 +35,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 Or if you already have a `reqwest::Client` that you want to use,
 use `get_with_client` and `get_with_client_amount` respectively.
 
-## Details
-
 There is another property called `details`:
 
-For `Category::Neko`, `Category::Husbando`, `Category::Kitsune`, `Category::Waifu` (Image endpoints):
+For `Category::Neko`, `Category::Husbando`, `Category::Kitsune`, `Category::Waifu` (image endpoints):
 
 ```rust, noplaypen
 #[tokio::main]
@@ -116,7 +115,7 @@ Or if you have your own random number:
 
 ```rust, noplaypen
 fn main() {
-    let your_random = unimplemented!();
+    let your_random = todo!();
     let img_url = nekosbest::local::Neko.get_random(your_random);
     println!("{}", img_url);
     Ok(())
