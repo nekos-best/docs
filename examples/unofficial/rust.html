@@ -4,7 +4,10 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Rust - nekos.best API</title>
+
+
         <!-- Custom HTML head -->
+        
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The official nekos.best API documentation.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,15 +19,18 @@
         <link rel="stylesheet" href="../../css/variables.css">
         <link rel="stylesheet" href="../../css/general.css">
         <link rel="stylesheet" href="../../css/chrome.css">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="../../fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../../highlight.css">
         <link rel="stylesheet" href="../../tomorrow-night.css">
         <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -83,7 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -108,6 +114,7 @@
                         <a href="https://github.com/nekos-best/docs" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -121,6 +128,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -134,9 +142,9 @@
                     <main>
                         <h1 id="rust"><a class="header" href="#rust"><a href="https://nekos.best/discord?ref=docs"><img src="https://cdn.discordapp.com/emojis/972378381867941928.webp?size=24&amp;quality=lossless" alt="Rust" /></a> Rust</a></h1>
 <hr />
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
 <pre><code class="language-toml">[dependencies]
-nekosbest = &quot;0.14.1&quot;
+nekosbest = &quot;0.15&quot;
 </code></pre>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
@@ -145,7 +153,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     println!(&quot;{}&quot;, img_url);
     Ok(())
 }</code></pre>
-<p>Or with an amount (Amount is capped at 20 by the server):</p>
+<p>Or with an amount (amount is capped at 20 by the server):</p>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let images = nekosbest::get_amount(nekosbest::Category::Neko, 20).await?.0;
@@ -154,9 +162,8 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 }</code></pre>
 <p>Or if you already have a <code>reqwest::Client</code> that you want to use,
 use <code>get_with_client</code> and <code>get_with_client_amount</code> respectively.</p>
-<h2 id="details"><a class="header" href="#details">Details</a></h2>
 <p>There is another property called <code>details</code>:</p>
-<p>For <code>Category::Neko</code>, <code>Category::Husbando</code>, <code>Category::Kitsune</code>, <code>Category::Waifu</code> (Image endpoints):</p>
+<p>For <code>Category::Neko</code>, <code>Category::Husbando</code>, <code>Category::Kitsune</code>, <code>Category::Waifu</code> (image endpoints):</p>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::get(nekosbest::Category::Neko)
@@ -209,7 +216,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 }</code></pre>
 <p>Or if you have your own random number:</p>
 <pre><code class="language-rust  noplaypen">fn main() {
-    let your_random = unimplemented!();
+    let your_random = todo!();
     let img_url = nekosbest::local::Neko.get_random(your_random);
     println!(&quot;{}&quot;, img_url);
     Ok(())
@@ -232,9 +239,11 @@ you want to find out how it works.</p>
                             <a rel="prev" href="../../examples/unofficial/dart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
+
                             <a rel="next" href="../../legal/privacy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -244,6 +253,7 @@ you want to find out how it works.</p>
                     <a rel="prev" href="../../examples/unofficial/dart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
+
                     <a rel="next" href="../../legal/privacy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -251,16 +261,24 @@ you want to find out how it works.</p>
 
         </div>
 
+
+
+
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
+
+
         <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
         <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+
+
     </body>
 </html>
