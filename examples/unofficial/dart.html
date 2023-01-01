@@ -149,26 +149,37 @@
 </code></pre>
 <h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
 <p>Import the package to your project and use the methods.</p>
-<pre><code class="language-c">import 'package:nekos_best/nekos_best.dart' as nb;
+<pre><code class="language-c">import 'package:nekos_best/nekos_best.dart' show fetch, Client;
 
 void main() async {
-    var neko = await nb.fetch(endpoint: 'neko');
+    // Use the `fetch` function to fetch a random neko
+    var neko = await fetch(endpoint: 'neko');
     print(neko);
+
+    // Alternatively you can initiate a `Client` class which
+    // provides more methods and functions
+    var client = Client();
+
+    // `Client.fetch` method
+    var baka = client.fetch(endpoint: 'baka');
+    // `Client.fetch` for a random category
+    var random = client.fetch();
+    // `Client.fetch` with an amount
+    var five_nekos = client.fetch(endpoint: 'baka', amount: 5);
+    // `Client.fetchFile` method
+    var kitsune_file = client.fetchFile('kitsune');
+    // `Client.search` method
+    var search = client.search('Gochuumon wa Usagi Desuka??');
 }
 </code></pre>
-<p>The package only exports a single function <code>fetch</code></p>
-<pre><code class="language-c">var random = nb.fetch();
-var single_neko = nb.fetch(endpoint: 'neko');
-var multi_neko = nb.fetch(endpoint: 'neko', amount: 5);
-</code></pre>
-<p>You can specify the amount of results you want, or the category from which to get the result. Both are optional. By default, amount is set to 1. If the endpoint is unspecified, it uses a randomly chosen endpoint.</p>
-<p>The function returns a list of class <a href="https://github.com/Yakiyo/nekos_best_dart/blob/main/README.md#response">NBResponse</a>. You can access it's fields with dot notation.</p>
-<pre><code class="language-c">var baka = await nb.fetch(endpoint: 'baka');
-// It always returns a list of NBResponse, so 
+<p>The package uses <a href="https://pub.dev/documentation/nekos_best/latest/nekos_best/NBResonse-class.html">NBResponse</a> and <a href="https://pub.dev/documentation/nekos_best/latest/nekos_best/NBBufferResonse-class.html">NBBufferResponse</a> classes in it's return values. You can access the fields with dot notation.</p>
+<pre><code class="language-c">var baka = await client.fetch(endpoint: 'baka');
+// It always returns a List&lt;NBResponse&gt;, so 
 // we need to get the first element from the list
 print(&quot;url: ${baka[0].url}, source: ${baka[0].anime_name}&quot;);
 </code></pre>
-<p>More details on the package can be found in the repo's <a href="https://github.com/Yakiyo/nekos_best_dart#readme">README</a>. The example is in the <a href="https://github.com/Yakiyo/nekos_best_dart/tree/main/example">example</a> directory.</p>
+<p>See <a href="https://github.com/Yakiyo/nekos_best_dart/blob/main/example/structs_example.dart">example/struct_example.dart</a> for details and consult the <a href="https://pub.dev/documentation/nekos_best/latest/nekos_best/nekos_best-library.html">Api Reference</a></p>
+<p>More details on the package can be found in the repo's <a href="https://github.com/Yakiyo/nekos_best_dart#readme">README</a>. Examples on all methods, usage, classes are in the <a href="https://github.com/Yakiyo/nekos_best_dart/tree/main/example">example</a> directory.</p>
 <h3 id="example-without-wrapper"><a class="header" href="#example-without-wrapper">Example without wrapper</a></h3>
 <p>Add <a href="https://pub.dev/packages/http">http</a> to your project and import it.</p>
 <pre><code class="language-c">import 'package:http/http.dart' as http;
