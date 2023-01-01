@@ -180,7 +180,7 @@ int main() {
 	return 0;
 }
 </code></pre>
-<h4 id="get-a-list-of-available-endpoint"><a class="header" href="#get-a-list-of-available-endpoint">Get a list of available endpoint</a></h4>
+<h4 id="get-a-list-of-available-endpoint"><a class="header" href="#get-a-list-of-available-endpoint">Get a list of available endpoint:</a></h4>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 #include &quot;nekos-best++.hpp&quot;
 
@@ -202,6 +202,30 @@ int main() {
 	}
 
 	return 0;
+}
+</code></pre>
+<h4 id="downloading"><a class="header" href="#downloading">Downloading:</a></h4>
+<pre><code class="language-cpp">std::ostringstream download_stream;
+// 					get random stuff
+nekos_best::Meta meta = nekos_best::fetch_single(&quot;&quot;, &quot;&quot;, nekos_best::if_none, &amp;download_stream);
+
+std::ofstream file;
+
+// no image info from the API, we can just name it this for now
+// or better specify endpoint you know which gives which
+// and have a proper filename with an extension
+file.open(&quot;image&quot;, std::ios::out);
+
+if (!file.is_open()) {
+	fprintf(stderr, &quot;[download ERROR] Can't open stream for writing\n&quot;);
+}
+else {
+	// get header size
+	const auto response = nekos_best::get_last_request_response();
+	// 		strip header from actual image data
+	file &lt;&lt; download_stream.str().substr(response.header_size);
+	file.close();
+	printf(&quot;Image saved to \'image\'\n&quot;);
 }
 </code></pre>
 <p>Recommended to check for last response result after every fetch by calling get_last_request_response(),
