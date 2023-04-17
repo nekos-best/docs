@@ -6,7 +6,7 @@
 
 ## GET `/endpoints`
 
-Lists all available categories along with their limits.
+Lists all available categories.
 
 > **Example:** <https://nekos.best/api/v2/endpoints>
 >
@@ -14,9 +14,9 @@ Lists all available categories along with their limits.
 >
 > ```json
 > {
->     "neko": {"min": "0001", "max": "0577", "format": "png"},
+>     "neko": {"format": "png"},
 >     ···,
->     "wink": {"min": "001", "max": "015", "format": "gif"}
+>     "wink": {"format": "gif"}
 > }
 > ```
 
@@ -37,7 +37,7 @@ The amount query may be used to retrieve multiple assets at once. The amount is 
 >         "artist_href":"https://www.pixiv.net/en/users/47065875",
 >         "artist_name":"かえで",
 >         "source_url":"https://www.pixiv.net/en/artworks/88682108",
->         "url":"https://nekos.best/api/v2/neko/0427.png"
+>         "url":"https://nekos.best/api/v2/neko/bbffa4e8-dc40-11ed-afa1-0242ac120002.png"
 >      }
 >   ]
 >}
@@ -52,11 +52,11 @@ The amount query may be used to retrieve multiple assets at once. The amount is 
 >   "results":[
 >      {
 >         "anime_name":"Sword Art Online",
->         "url":"https://nekos.best/api/v2/hug/008.gif"
+>         "url":"https://nekos.best/api/v2/hug/c6a7d384-dc40-11ed-afa1-0242ac120002.gif"
 >      },
 >      {
 >         "anime_name":"Hibike! Euphonium",
->         "url":"https://nekos.best/api/v2/hug/004.gif"
+>         "url":"https://nekos.best/api/v2/hug/ca26cfba-dc40-11ed-afa1-0242ac120002.gif"
 >      }
 >   ]
 >}
@@ -79,7 +79,7 @@ The query parameter can be used to search for a specific phrase in the image or 
 >            "artist_href":"https://twitter.com/Aramarufox/",
 >            "artist_name":"Aramarufox",
 >            "source_url":"https://twitter.com/Aramarufox/status/1491744680999940101",
->            "url":"https://nekos.best/api/v2/kitsune/0090.png"
+>            "url":"https://nekos.best/api/v2/kitsune/ca26cfba-dc40-11ed-afa1-0242ac120002.png"
 >        }
 >    ]
 >}
@@ -94,11 +94,11 @@ The query parameter can be used to search for a specific phrase in the image or 
 >    "results":[
 >        {
 >            "anime_name":"Sewayaki Kitsune no Senko-san",
->            "url":"https://nekos.best/api/v2/pat/037.gif"
+>            "url":"https://nekos.best/api/v2/pat/ca26cfba-dc40-11ed-afa1-0242ac120002.gif"
 >        },
 >        {
 >            "anime_name":"Sewayaki Kitsune no Senko-san",
->            "url":"https://nekos.best/api/v2/pat/036.gif"
+>            "url":"https://nekos.best/api/v2/pat/ca26cfba-dc40-11ed-afa1-0242ac120002.gif"
 >        }
 >    ]
 >}
@@ -110,6 +110,6 @@ Gets a specific image from our categories. Replace `:filename` with the asset's 
 
 **Note:** The asset's metadata are provided URL-encoded, in the response's headers under `anime_name`, `artist_name`, `artist_href` and `source_url`.
 
-> **Example:** <https://nekos.best/api/v2/hug/001.gif>
+> **Example:** <https://nekos.best/api/v2/hug/ca26cfba-dc40-11ed-afa1-0242ac120002.gif>
 >
 > **Returns:** *Binary data*
