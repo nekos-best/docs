@@ -144,7 +144,7 @@
 <hr />
 <h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
 <pre><code class="language-toml">[dependencies]
-nekosbest = &quot;0.15&quot;
+nekosbest = &quot;0.16&quot;
 </code></pre>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
@@ -207,22 +207,6 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     println!(&quot;Anime name: {}&quot;, details.anime_name);
     Ok(())
 }</code></pre>
-<p>By using the <code>local</code> feature, you can completely skip requests to the API.</p>
-<pre><code class="language-rust  noplaypen">#[tokio::main]
-async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
-    let img_url = nekosbest::local::Neko.get(); // requires the &quot;local&quot; feature
-    println!(&quot;{}&quot;, img_url);
-    Ok(())
-}</code></pre>
-<p>Or if you have your own random number:</p>
-<pre><code class="language-rust  noplaypen">fn main() {
-    let your_random = todo!();
-    let img_url = nekosbest::local::Neko.get_random(your_random);
-    println!(&quot;{}&quot;, img_url);
-    Ok(())
-}</code></pre>
-<p>Take a look at <a href="build.rs">the build script</a> and <a href="src/local.rs">src/local.rs</a> if
-you want to find out how it works.</p>
 <h2 id="blocking-client"><a class="header" href="#blocking-client">Blocking client</a></h2>
 <p>All functions become blocking when used with the &quot;blocking&quot; feature.</p>
 <h2 id="about"><a class="header" href="#about">About</a></h2>
