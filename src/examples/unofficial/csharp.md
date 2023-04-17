@@ -124,7 +124,7 @@ public class ExampleClass
 
 ## About
 
-> Example added by: [**Pusheon**](https://github.com/Pusheon)
+> Example added by: [**SylveonDeko**](https://github.com/SylveonDeko)
 >
 > The source code is available at [**GitHub**](https://github.com/Sylveon76/Nekos.Best-API)
 >
