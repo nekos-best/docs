@@ -144,14 +144,14 @@
 <h1 id="endpoints"><a class="header" href="#endpoints">Endpoints</a></h1>
 <hr />
 <h2 id="get-endpoints"><a class="header" href="#get-endpoints">GET <code>/endpoints</code></a></h2>
-<p>Lists all available categories along with their limits.</p>
+<p>Lists all available categories.</p>
 <blockquote>
 <p><strong>Example:</strong> <a href="https://nekos.best/api/v2/endpoints">https://nekos.best/api/v2/endpoints</a></p>
 <p><strong>Returns:</strong></p>
 <pre><code class="language-json">{
-    &quot;neko&quot;: {&quot;min&quot;: &quot;0001&quot;, &quot;max&quot;: &quot;0577&quot;, &quot;format&quot;: &quot;png&quot;},
+    &quot;neko&quot;: {&quot;format&quot;: &quot;png&quot;},
     ···,
-    &quot;wink&quot;: {&quot;min&quot;: &quot;001&quot;, &quot;max&quot;: &quot;015&quot;, &quot;format&quot;: &quot;gif&quot;}
+    &quot;wink&quot;: {&quot;format&quot;: &quot;gif&quot;}
 }
 </code></pre>
 </blockquote>
@@ -167,7 +167,7 @@
         &quot;artist_href&quot;:&quot;https://www.pixiv.net/en/users/47065875&quot;,
         &quot;artist_name&quot;:&quot;かえで&quot;,
         &quot;source_url&quot;:&quot;https://www.pixiv.net/en/artworks/88682108&quot;,
-        &quot;url&quot;:&quot;https://nekos.best/api/v2/neko/0427.png&quot;
+        &quot;url&quot;:&quot;https://nekos.best/api/v2/neko/bbffa4e8-dc40-11ed-afa1-0242ac120002.png&quot;
      }
   ]
 }
@@ -180,11 +180,11 @@
   &quot;results&quot;:[
      {
         &quot;anime_name&quot;:&quot;Sword Art Online&quot;,
-        &quot;url&quot;:&quot;https://nekos.best/api/v2/hug/008.gif&quot;
+        &quot;url&quot;:&quot;https://nekos.best/api/v2/hug/c6a7d384-dc40-11ed-afa1-0242ac120002.gif&quot;
      },
      {
         &quot;anime_name&quot;:&quot;Hibike! Euphonium&quot;,
-        &quot;url&quot;:&quot;https://nekos.best/api/v2/hug/004.gif&quot;
+        &quot;url&quot;:&quot;https://nekos.best/api/v2/hug/ca26cfba-dc40-11ed-afa1-0242ac120002.gif&quot;
      }
   ]
 }
@@ -202,7 +202,7 @@
            &quot;artist_href&quot;:&quot;https://twitter.com/Aramarufox/&quot;,
            &quot;artist_name&quot;:&quot;Aramarufox&quot;,
            &quot;source_url&quot;:&quot;https://twitter.com/Aramarufox/status/1491744680999940101&quot;,
-           &quot;url&quot;:&quot;https://nekos.best/api/v2/kitsune/0090.png&quot;
+           &quot;url&quot;:&quot;https://nekos.best/api/v2/kitsune/ca26cfba-dc40-11ed-afa1-0242ac120002.png&quot;
        }
    ]
 }
@@ -215,11 +215,11 @@
    &quot;results&quot;:[
        {
            &quot;anime_name&quot;:&quot;Sewayaki Kitsune no Senko-san&quot;,
-           &quot;url&quot;:&quot;https://nekos.best/api/v2/pat/037.gif&quot;
+           &quot;url&quot;:&quot;https://nekos.best/api/v2/pat/ca26cfba-dc40-11ed-afa1-0242ac120002.gif&quot;
        },
        {
            &quot;anime_name&quot;:&quot;Sewayaki Kitsune no Senko-san&quot;,
-           &quot;url&quot;:&quot;https://nekos.best/api/v2/pat/036.gif&quot;
+           &quot;url&quot;:&quot;https://nekos.best/api/v2/pat/ca26cfba-dc40-11ed-afa1-0242ac120002.gif&quot;
        }
    ]
 }
@@ -229,7 +229,7 @@
 <p>Gets a specific image from our categories. Replace <code>:filename</code> with the asset's filename and <code>:format</code> with the category's format.</p>
 <p><strong>Note:</strong> The asset's metadata are provided URL-encoded, in the response's headers under <code>anime_name</code>, <code>artist_name</code>, <code>artist_href</code> and <code>source_url</code>.</p>
 <blockquote>
-<p><strong>Example:</strong> <a href="https://nekos.best/api/v2/hug/001.gif">https://nekos.best/api/v2/hug/001.gif</a></p>
+<p><strong>Example:</strong> <a href="https://nekos.best/api/v2/hug/ca26cfba-dc40-11ed-afa1-0242ac120002.gif">https://nekos.best/api/v2/hug/ca26cfba-dc40-11ed-afa1-0242ac120002.gif</a></p>
 <p><strong>Returns:</strong> <em>Binary data</em></p>
 </blockquote>
 
