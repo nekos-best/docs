@@ -144,7 +144,7 @@
 <hr />
 <h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
 <pre><code class="language-toml">[dependencies]
-nekosbest = &quot;0.16&quot;
+nekosbest = &quot;0.17&quot;
 </code></pre>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
@@ -160,8 +160,21 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     println!(&quot;{:?}&quot;, images);
     Ok(())
 }</code></pre>
-<p>Or if you already have a <code>reqwest::Client</code> that you want to use,
-use <code>get_with_client</code> and <code>get_with_client_amount</code> respectively.</p>
+<p>Or if you already have a <code>Client</code> that you want to use,
+use <code>get_with_client</code> and <code>get_with_client_amount</code> respectively:</p>
+<pre><code class="language-rust  noplaypen">#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+    let client = nekosbest::client::Client::new(nekosbest::client::ClientConfig::default());
+    let details = nekosbest::get_with_client(&amp;client, nekosbest::Category::Neko)
+        .await?
+        .details
+        .try_into_image()
+        .unwrap();
+    println!(&quot;Source: {}&quot;, details.source_url);
+    println!(&quot;Artist: {}&quot;, details.artist_name);
+    println!(&quot;Artist link: {}&quot;, details.artist_href);
+    Ok(())
+}</code></pre>
 <p>There is another property called <code>details</code>:</p>
 <p>For <code>Category::Neko</code>, <code>Category::Husbando</code>, <code>Category::Kitsune</code>, <code>Category::Waifu</code> (image endpoints):</p>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
