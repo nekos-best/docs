@@ -7,7 +7,7 @@
 
 ```toml
 [dependencies]
-nekosbest = "0.16"
+nekosbest = "0.17"
 ```
 
 ## Example
@@ -32,8 +32,24 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-Or if you already have a `reqwest::Client` that you want to use,
-use `get_with_client` and `get_with_client_amount` respectively.
+Or if you already have a `Client` that you want to use,
+use `get_with_client` and `get_with_client_amount` respectively:
+
+```rust, noplaypen
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = nekosbest::client::Client::new(nekosbest::client::ClientConfig::default());
+    let details = nekosbest::get_with_client(&client, nekosbest::Category::Neko)
+        .await?
+        .details
+        .try_into_image()
+        .unwrap();
+    println!("Source: {}", details.source_url);
+    println!("Artist: {}", details.artist_name);
+    println!("Artist link: {}", details.artist_href);
+    Ok(())
+}
+```
 
 There is another property called `details`:
 
