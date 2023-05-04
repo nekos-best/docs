@@ -11,7 +11,7 @@ fetch('https://nekos.best/api/v2/neko')
   .then(response => response.json())
   .then(json => console.log(json.results[0].url))
 
-// https://nekos.best/api/v2/neko/0001.png
+// https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png
 ```
 
 #### Using `async`
@@ -25,7 +25,7 @@ async function getNeko() {
 
 await getNeko()
 
-// https://nekos.best/api/v2/neko/0001.png
+// https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png
 ```
 
 ## Using our Wrapper
@@ -40,17 +40,14 @@ await getNeko()
 import { Client, fetchRandom } from "nekos-best.js";
 
 // You can use the `fetchRandom()` function to fetch a random neko.
-console.log(await fetchRandom("neko")); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/0247.png' }] }
+console.log(await fetchRandom("neko")); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png' }] }
 
 // Alternatively, you can initialize a new client which offers more features.
 const nekosBest = new Client();
-await nekosBest.init();
 
-// Such as the `<Client>.fetchRandom()` method.
-console.log(await nekosBest.fetchRandom("neko")); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/0138.png' }] }
-
-// You can use the `<Client>.fetchMultiple()` method to fetch multiple hug GIFs.
-console.log(await nekosBest.fetchMultiple("hug", 10)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/hug/019.gif' }, ···] }
+// Such as the `<Client>.fetch()` method.
+console.log(await nekosBest.fetch("neko", 1)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png' }] }
+console.log(await nekosBest.fetch("hug", 10)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/hug/XXXXXX-XXXXX.gif' }, ···] }
 
 // Or the `<Client>.fetchFile()` method to get a single file.
 console.log(await nekosBest.fetchFile("neko")); // { artist_href: '···', ···, data: <Buffer> }
@@ -63,28 +60,55 @@ import { Client as DiscordClient } from "discord.js";
 import { Client } from "nekos-best.js";
 
 const discordClient = new DiscordClient();
-const NekosBest = new Client();
-await NekosBest.init();
+const nekosBest = new Client();
 
 discordClient.on("messageCreate", async (message) => {
     if (message.author.bot) return;
 
     if (message.content.startsWith('!neko')) {
-        message.channel.send((await NekosBest.fetchRandom("neko")).results[0].url);
+        message.channel.send((await nekosBest.fetch("neko", 1)).results[0].url);
     }
 })
 
 discordClient.login("************************.******.***************************");
 ```
 
-### Migrate from 4.X.X
+## Migrate from 5.X.X to 6.X.X
+
+**❗ For the TypeScript users, the type `NbEndpointMetadata` will be removed in the 7.X.X version due to recent API changes**
+
+### `<Client>.fetchRandom()` & `<Client>.fetchMultiple()` methods have been removed in favor of the `<Client>.fetch(category, amount)` method
+
+```diff
+const nekosBest = new Client();
+
+- nekosBest.fetchRandom("neko")
++ nekosBest.fetch("neko", 1)
+```
+
+```diff
+const nekosBest = new Client();
+
+- nekosBest.fetchMultiple("neko", 15)
++ nekosBest.fetch("neko", 15)
+```
+
+### The `<Client>.init()` method has been removed
+
+```diff
+const nekosBest = new Client();
+
+- await nekosBest.init();
+```
+
+## Migrate from 4.X.X to 5.X.X
 
 #### The `fetchNeko(category)` function has been removed in favor of the `<Client>.fetchRandom()` method and its shortcut `fetchRandom()`
 
 ```diff
 - fetchNeko('category')
 + const nekosBest = new Client();
-+ 
++
 + nekosBest.fetchRandom('category')
 ```
 
@@ -98,7 +122,7 @@ discordClient.login("************************.******.***************************
 ```diff
 - fetchNeko('category', 15)
 + const nekosBest = new Client();
-+ 
++
 + nekosBest.fetchMultiple('category', 15)
 ```
 
