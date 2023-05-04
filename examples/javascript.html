@@ -148,7 +148,7 @@
   .then(response =&gt; response.json())
   .then(json =&gt; console.log(json.results[0].url))
 
-// https://nekos.best/api/v2/neko/0001.png
+// https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png
 </code></pre>
 <h4 id="using-async"><a class="header" href="#using-async">Using <code>async</code></a></h4>
 <pre><code class="language-js">async function getNeko() {
@@ -159,7 +159,7 @@
 
 await getNeko()
 
-// https://nekos.best/api/v2/neko/0001.png
+// https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png
 </code></pre>
 <h2 id="using-our-wrapper"><a class="header" href="#using-our-wrapper">Using our Wrapper</a></h2>
 <h3 id="installation"><a class="header" href="#installation">Installation</a></h3>
@@ -168,17 +168,14 @@ await getNeko()
 <pre><code class="language-js">import { Client, fetchRandom } from &quot;nekos-best.js&quot;;
 
 // You can use the `fetchRandom()` function to fetch a random neko.
-console.log(await fetchRandom(&quot;neko&quot;)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/0247.png' }] }
+console.log(await fetchRandom(&quot;neko&quot;)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png' }] }
 
 // Alternatively, you can initialize a new client which offers more features.
 const nekosBest = new Client();
-await nekosBest.init();
 
-// Such as the `&lt;Client&gt;.fetchRandom()` method.
-console.log(await nekosBest.fetchRandom(&quot;neko&quot;)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/0138.png' }] }
-
-// You can use the `&lt;Client&gt;.fetchMultiple()` method to fetch multiple hug GIFs.
-console.log(await nekosBest.fetchMultiple(&quot;hug&quot;, 10)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/hug/019.gif' }, ···] }
+// Such as the `&lt;Client&gt;.fetch()` method.
+console.log(await nekosBest.fetch(&quot;neko&quot;, 1)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png' }] }
+console.log(await nekosBest.fetch(&quot;hug&quot;, 10)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/hug/XXXXXX-XXXXX.gif' }, ···] }
 
 // Or the `&lt;Client&gt;.fetchFile()` method to get a single file.
 console.log(await nekosBest.fetchFile(&quot;neko&quot;)); // { artist_href: '···', ···, data: &lt;Buffer&gt; }
@@ -188,24 +185,41 @@ console.log(await nekosBest.fetchFile(&quot;neko&quot;)); // { artist_href: '·�
 import { Client } from &quot;nekos-best.js&quot;;
 
 const discordClient = new DiscordClient();
-const NekosBest = new Client();
-await NekosBest.init();
+const nekosBest = new Client();
 
 discordClient.on(&quot;messageCreate&quot;, async (message) =&gt; {
     if (message.author.bot) return;
 
     if (message.content.startsWith('!neko')) {
-        message.channel.send((await NekosBest.fetchRandom(&quot;neko&quot;)).results[0].url);
+        message.channel.send((await nekosBest.fetch(&quot;neko&quot;, 1)).results[0].url);
     }
 })
 
 discordClient.login(&quot;************************.******.***************************&quot;);
 </code></pre>
-<h3 id="migrate-from-4xx"><a class="header" href="#migrate-from-4xx">Migrate from 4.X.X</a></h3>
+<h2 id="migrate-from-5xx-to-6xx"><a class="header" href="#migrate-from-5xx-to-6xx">Migrate from 5.X.X to 6.X.X</a></h2>
+<p><strong>❗ For the TypeScript users, the type <code>NbEndpointMetadata</code> will be removed in the 7.X.X version due to recent API changes</strong></p>
+<h3 id="clientfetchrandom--clientfetchmultiple-methods-have-been-removed-in-favor-of-the-clientfetchcategory-amount-method"><a class="header" href="#clientfetchrandom--clientfetchmultiple-methods-have-been-removed-in-favor-of-the-clientfetchcategory-amount-method"><code>&lt;Client&gt;.fetchRandom()</code> &amp; <code>&lt;Client&gt;.fetchMultiple()</code> methods have been removed in favor of the <code>&lt;Client&gt;.fetch(category, amount)</code> method</a></h3>
+<pre><code class="language-diff">const nekosBest = new Client();
+
+- nekosBest.fetchRandom(&quot;neko&quot;)
++ nekosBest.fetch(&quot;neko&quot;, 1)
+</code></pre>
+<pre><code class="language-diff">const nekosBest = new Client();
+
+- nekosBest.fetchMultiple(&quot;neko&quot;, 15)
++ nekosBest.fetch(&quot;neko&quot;, 15)
+</code></pre>
+<h3 id="the-clientinit-method-has-been-removed"><a class="header" href="#the-clientinit-method-has-been-removed">The <code>&lt;Client&gt;.init()</code> method has been removed</a></h3>
+<pre><code class="language-diff">const nekosBest = new Client();
+
+- await nekosBest.init();
+</code></pre>
+<h2 id="migrate-from-4xx-to-5xx"><a class="header" href="#migrate-from-4xx-to-5xx">Migrate from 4.X.X to 5.X.X</a></h2>
 <h4 id="the-fetchnekocategory-function-has-been-removed-in-favor-of-the-clientfetchrandom-method-and-its-shortcut-fetchrandom"><a class="header" href="#the-fetchnekocategory-function-has-been-removed-in-favor-of-the-clientfetchrandom-method-and-its-shortcut-fetchrandom">The <code>fetchNeko(category)</code> function has been removed in favor of the <code>&lt;Client&gt;.fetchRandom()</code> method and its shortcut <code>fetchRandom()</code></a></h4>
 <pre><code class="language-diff">- fetchNeko('category')
 + const nekosBest = new Client();
-+ 
++
 + nekosBest.fetchRandom('category')
 </code></pre>
 <pre><code class="language-diff">- fetchNeko('category')
@@ -214,7 +228,7 @@ discordClient.login(&quot;************************.******.**********************
 <h4 id="the-optional-parameter-amount-of-the-fetchneko-function-has-been-removed-in-favor-of-the-clientfetchmultiple-method"><a class="header" href="#the-optional-parameter-amount-of-the-fetchneko-function-has-been-removed-in-favor-of-the-clientfetchmultiple-method">The optional parameter <code>amount</code> of the <code>fetchNeko()</code> function has been removed in favor of the <code>&lt;Client&gt;.fetchMultiple()</code> method</a></h4>
 <pre><code class="language-diff">- fetchNeko('category', 15)
 + const nekosBest = new Client();
-+ 
++
 + nekosBest.fetchMultiple('category', 15)
 </code></pre>
 <h3 id="other-changes"><a class="header" href="#other-changes">Other Changes</a></h3>
