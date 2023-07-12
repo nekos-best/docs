@@ -16,6 +16,7 @@
   - [C#](examples/unofficial/csharp.md)
   - [C++](examples/unofficial/c++.md)
   - [Dart](examples/unofficial/dart.md)
+  - [Go](examples/unofficial/go.md)
   - [Rust](examples/unofficial/rust.md)
   <!--             PLEASE ALPHABETICALLY              -->
 
