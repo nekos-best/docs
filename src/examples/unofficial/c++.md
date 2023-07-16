@@ -75,9 +75,11 @@ int main() {
 #### Downloading:
 
 ```cpp
+const std::string search_result = "https://nekos.best/api/v2/neko/c841bace-142f-41ee-a042-666b1bb4554a.png";
+
 std::ostringstream download_stream;
-// 					get random stuff
-nekos_best::Meta meta = nekos_best::fetch_single("", "", nekos_best::if_none, &download_stream);
+// 					download search result
+nekos_best::Meta meta = nekos_best::download(search_result, &download_stream);
 
 std::ofstream file;
 
