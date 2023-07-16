@@ -205,9 +205,11 @@ int main() {
 }
 </code></pre>
 <h4 id="downloading"><a class="header" href="#downloading">Downloading:</a></h4>
-<pre><code class="language-cpp">std::ostringstream download_stream;
-// 					get random stuff
-nekos_best::Meta meta = nekos_best::fetch_single(&quot;&quot;, &quot;&quot;, nekos_best::if_none, &amp;download_stream);
+<pre><code class="language-cpp">const std::string search_result = &quot;https://nekos.best/api/v2/neko/c841bace-142f-41ee-a042-666b1bb4554a.png&quot;;
+
+std::ostringstream download_stream;
+// 					download search result
+nekos_best::Meta meta = nekos_best::download(search_result, &amp;download_stream);
 
 std::ofstream file;
 
