@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>C++ - nekos.best API</title>
+        <title>Go - nekos.best API</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="../../api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="../../api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="../../examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../../examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/c++.html" class="active"><strong aria-hidden="true">5.3.</strong> C++</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/dart.html"><strong aria-hidden="true">5.4.</strong> Dart</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/go.html"><strong aria-hidden="true">5.5.</strong> Go</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/rust.html"><strong aria-hidden="true">5.6.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="../../legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="../../legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="../../api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="../../api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="../../examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../../examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/c++.html"><strong aria-hidden="true">5.3.</strong> C++</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/dart.html"><strong aria-hidden="true">5.4.</strong> Dart</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/go.html" class="active"><strong aria-hidden="true">5.5.</strong> Go</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/rust.html"><strong aria-hidden="true">5.6.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="../../legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="../../legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,116 +140,108 @@
 
                 <div id="content" class="content">
                     <main>
-                        <!-- markdownlint-disable MD010 MD001 MD026 -->
-<h1 id="c"><a class="header" href="#c"><a href="https://nekos.best/discord?ref=docs"><img src="https://cdn.discordapp.com/emojis/1043849608230608937.webp?size=32&amp;quality=lossless" alt="CPP" /></a> C++</a></h1>
+                        <!-- markdownlint-disable MD014 -->
+<h1 id="go"><a class="header" href="#go"><a href="https://nekos.best/discord?ref=docs"><img src="https://cdn.discordapp.com/emojis/1128611804596158574.webp?size=24&amp;quality=lossless" alt="CS" /></a> Go</a></h1>
 <hr />
-<h2 id="dependencies"><a class="header" href="#dependencies">Dependencies</a></h2>
-<ul>
-<li><a href="https://github.com/jpbarrette/curlpp/">curlpp</a></li>
-<li>libcurl</li>
-<li><a href="https://github.com/nlohmann/json">nlohmann/json</a> (included)</li>
-</ul>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>Add the module to your project</p>
+<pre><code class="language-bash">$ go get -u github.com/Yakiyo/nekos_best.go
+</code></pre>
 <h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
-<h4 id="simple-request"><a class="header" href="#simple-request">Simple request:</a></h4>
-<pre><code class="language-cpp">#include &lt;stdio.h&gt;
-#include &quot;nekos-best++.hpp&quot;
+<p>Import it in your code</p>
+<pre><code class="language-go">import (
+    nb github.com/Yakiyo/nekos_best.go
+)
+</code></pre>
+<p>Full reference at <a href="https://pkg.go.dev/github.com/Yakiyo/nekos_best.go">go.pkg.dev</a></p>
+<h3 id="fetch-a-single-entry"><a class="header" href="#fetch-a-single-entry">Fetch a single entry</a></h3>
+<pre><code class="language-go">res, err := nb.Fetch(&quot;neko&quot;)
+if err != nil {
+    // handle err
+}
+fmt.Println(res.Url, res.Artist_name, res.Artist_href)
+</code></pre>
+<h3 id="fetch-multiple-entries"><a class="header" href="#fetch-multiple-entries">Fetch multiple entries</a></h3>
+<pre><code class="language-go">res, _ := nb.FetchMany(&quot;baka&quot;, 3)
 
-int main() {
-	// init the client first to cache all available endpoints for it to be able to get random endpoint
-	nekos_best::init();
+fmt.Println(res[0].Url)
+</code></pre>
+<h3 id="fetch-a-file"><a class="header" href="#fetch-a-file">Fetch a file</a></h3>
+<pre><code class="language-go">import &quot;os&quot;
 
-	printf(&quot;base_url: %s\n&quot;, nekos_best::get_base_url().c_str());
-	nekos_best::QueryResult result_struct = nekos_best::fetch(&quot;&quot;, 5);
+res, _ := nb.FetchFile(&quot;pat&quot;)
 
-	// check the response
-	const nekos_best::Response res = nekos_best::get_last_request_response();
+os.WriteFile(&quot;image.png&quot;, res.Data, 0644)
 
-	printf(&quot;[RESPONSE] STATUS_CODE: %ld\n&quot;, res.status_code);
-	printf(&quot;[RESPONSE] HEADERS:\n&quot;);
+// print associated entry for the image
+fmt.Println(res.Body)
+</code></pre>
+<h3 id="search-for-an-entry"><a class="header" href="#search-for-an-entry">Search for an entry</a></h3>
+<pre><code class="language-go">res, _ := nb.Search(&quot;Gochuumon wa Usagi Desuka??&quot;, &quot;baka&quot;, 3)
 
-	for (const auto header : res.headers)
-		printf(&quot;\&quot;%s\&quot;: \&quot;%s\&quot;\n&quot;, header.first.c_str(), header.second.c_str());
+fmt.Println(res)
+</code></pre>
+<h3 id="generate-random-category"><a class="header" href="#generate-random-category">Generate random category</a></h3>
+<pre><code class="language-go">cat := nb.RandomCategory()
+</code></pre>
+<h2 id="example-without-the-module"><a class="header" href="#example-without-the-module">Example without the module</a></h2>
+<pre><code class="language-go">package main
 
-	printf(&quot;\n&quot;);
+import (
+    &quot;fmt&quot;
+    &quot;io&quot;
+    &quot;net/http&quot;
+    &quot;encoding/json&quot;
+)
 
-	printf(&quot;[RESPONSE] JSON:\n%s\n\n&quot;, res.raw_json.dump(2).c_str());
-	for (const nekos_best::Meta&amp; data : result_struct.results) {
-		printf(&quot;Got url: %s\n&quot;, data.url.c_str());
-	}
+// Result of an entry for nekos.best api response for 
+// an image endpoint
+type Result struct {
+    Url string
+    Artist_name string
+    Artist_href string
+}
 
-	return 0;
+// The entire api response returned
+type Api_Response struct {
+    Results []Result
+}
+
+func main() {
+    res, err := http.Get(&quot;https://nekos.best/api/v2/neko&quot;)
+    if err != nil {
+        fmt.Println(&quot;Error %v&quot;, err)
+        return
+    }
+    // Read body to bytes and defer the close
+    defer res.Body.Close()
+    bytes, err := io.ReadAll(res.Body)
+    if err != nil {
+        fmt.Println(&quot;Error %v&quot;, err)
+        return
+    }
+    // Parse []byte to json
+    response := &amp;Api_Response{}
+    json.Unmarshal(bytes, response)
+    fmt.Println(response.Results[0])
 }
 </code></pre>
-<h4 id="get-a-list-of-available-endpoint"><a class="header" href="#get-a-list-of-available-endpoint">Get a list of available endpoint:</a></h4>
-<pre><code class="language-cpp">#include &lt;stdio.h&gt;
-#include &quot;nekos-best++.hpp&quot;
-
-int main() {
-	printf(&quot;%s\n&quot;, nekos_best::get_base_url().c_str());
-
-	// as we call get_available_endpoints() here thus caching the endpoints data from the API,
-	// we don't need to initialize the client anymore.
-	const std::map&lt;std::string, nekos_best::EndpointSpec&gt; res = nekos_best::get_available_endpoints();
-
-	for (const auto&amp; d : res) {
-		printf(&quot;KEY: \&quot;%s\&quot;\n&quot;, d.first.c_str());
-
-		printf(&quot;FORMAT: \&quot;%s\&quot;\n&quot;, nekos_best::get_str_format(d.second.format).c_str());
-		printf(&quot;MAX: \&quot;%s\&quot;\n&quot;, d.second.max.c_str());
-		printf(&quot;MIN: \&quot;%s\&quot;\n&quot;, d.second.min.c_str());
-		printf(&quot;NAME: \&quot;%s\&quot;\n&quot;, d.second.name.c_str());
-		printf(&quot;\n&quot;);
-	}
-
-	return 0;
-}
-</code></pre>
-<h4 id="downloading"><a class="header" href="#downloading">Downloading:</a></h4>
-<pre><code class="language-cpp">std::ostringstream download_stream;
-// 					get random stuff
-nekos_best::Meta meta = nekos_best::fetch_single(&quot;&quot;, &quot;&quot;, nekos_best::if_none, &amp;download_stream);
-
-std::ofstream file;
-
-// no image info from the API, we can just name it this for now
-// or better specify endpoint you know which gives which
-// and have a proper filename with an extension
-file.open(&quot;image&quot;, std::ios::out);
-
-if (!file.is_open()) {
-	fprintf(stderr, &quot;[download ERROR] Can't open stream for writing\n&quot;);
-}
-else {
-	// get header size
-	const auto response = nekos_best::get_last_request_response();
-	// 		strip header from actual image data
-	file &lt;&lt; download_stream.str().substr(response.header_size);
-	file.close();
-	printf(&quot;Image saved to \'image\'\n&quot;);
-}
-</code></pre>
-<p>Recommended to check for last response result after every fetch by calling get_last_request_response(),
-helps to determine whether a request failed or succeeded.</p>
-<p>You can check whether you're rate limited from making any more request to an endpoint with the is_rate_limited() function.
-Get the RateLimitInfo struct of an endpoint by calling get_rate_limit_info().</p>
-<p>Every request is blocking, you can simply use thread if you like. Use the ns_mutex mutex for thread safety.</p>
-<p>Read and compile example files for demonstration.</p>
 <h2 id="about"><a class="header" href="#about">About</a></h2>
 <blockquote>
-<p>Example added by: <a href="https://github.com/Neko-Life"><strong>Neko-Life</strong></a></p>
-<p>The source code is available at <a href="https://github.com/Neko-Life/nekos-bestpp"><strong>GitHub</strong></a></p>
-<p><a href="https://github.com/Neko-Life/nekos-bestpp"><img src="https://img.shields.io/github/stars/Neko-Life/nekos-bestpp?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
+<p>Example added by: <a href="https://github.com/Yakiyo"><strong>Yakiyo</strong></a></p>
+<p>Package source code is available on <a href="https://github.com/Yakiyo/nekos_best.go"><strong>Github</strong></a></p>
+<p><a href="https://pkg.go.dev/github.com/Yakiyo/nekos_best.go"><img src="https://pkg.go.dev/badge/github.com/Yakiyo/nekos_best.go.svg" alt="Go Reference" /></a> <a href="https://github.com/Yakiyo/nekos_best.go"><img src="https://img.shields.io/github/stars/Yakiyo/nekos_best.go?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
 </blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../examples/unofficial/csharp.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../examples/unofficial/dart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../examples/unofficial/dart.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../examples/unofficial/rust.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -259,11 +251,11 @@ Get the RateLimitInfo struct of an endpoint by calling get_rate_limit_info().</p
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../examples/unofficial/csharp.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../examples/unofficial/dart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../examples/unofficial/dart.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../examples/unofficial/rust.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
