@@ -144,20 +144,20 @@
 <hr />
 <h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
 <pre><code class="language-toml">[dependencies]
-nekosbest = &quot;0.17&quot;
+nekosbest = &quot;0.19&quot;
 </code></pre>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let img_url: String = nekosbest::get(nekosbest::Category::Neko).await?.url;
-    println!(&quot;{}&quot;, img_url);
+    println!(&quot;{img_url}&quot;);
     Ok(())
 }</code></pre>
 <p>Or with an amount (amount is capped at 20 by the server):</p>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let images = nekosbest::get_amount(nekosbest::Category::Neko, 20).await?.0;
-    println!(&quot;{:?}&quot;, images);
+    println!(&quot;{images:?}&quot;);
     Ok(())
 }</code></pre>
 <p>Or if you already have a <code>Client</code> that you want to use,
