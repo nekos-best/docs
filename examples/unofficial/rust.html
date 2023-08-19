@@ -144,7 +144,7 @@
 <hr />
 <h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
 <pre><code class="language-toml">[dependencies]
-nekosbest = &quot;0.19&quot;
+nekosbest = &quot;0.20&quot;
 </code></pre>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
@@ -218,6 +218,35 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::st_get::&lt;nekosbest::Pat&gt;().await?.details;
     println!(&quot;Anime name: {}&quot;, details.anime_name);
+    Ok(())
+}</code></pre>
+<h2 id="downloading-the-images"><a class="header" href="#downloading-the-images">Downloading the images.</a></h2>
+<p>With the <code>download</code> feature, you can download the images directly, like so:</p>
+<pre><code class="language-rust  noplaypen">#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+    let resp = nekosbest::get(nekosbest::Category::Neko).await?;
+    let image = nekosbest::download::download(&amp;resp).await?;
+    
+    // maybe also save, or just use it directly
+    tokio::task::spawn_blocking(move || image.save(&quot;neko.png&quot;)).await??;
+
+    // or alternatively, if you just want to save it, without
+    // loading the whole image in-memory:
+    nekosbest::download::download_to_file(&amp;resp, &quot;neko.png&quot;).await?;
+    Ok(())
+}</code></pre>
+<p>Or directly from a given URL:</p>
+<pre><code class="language-rust  noplaypen">#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+    // let resp = nekosbest::get(nekosbest::Category::Neko).await?;
+    // let url: String = resp.url;
+    let url = &quot;https://nekos.best/api/v2/neko/1efcda2d-d0d3-4e96-9b40-86852374b4bc.png&quot;.to_owned();
+    let image = nekosbest::download::download_from_url(&amp;url).await?;
+    tokio::task::spawn_blocking(move || image.save(&quot;neko.png&quot;)).await??;
+
+    // or alternatively, if you just want to save it, without
+    // loading the whole image in-memory:
+    nekosbest::download::download_from_url_to_file(&amp;url, &quot;neko.png&quot;).await?;
     Ok(())
 }</code></pre>
 <h2 id="blocking-client"><a class="header" href="#blocking-client">Blocking client</a></h2>
