@@ -32,7 +32,7 @@ We focus on giving the best experience for our users and their projects, for fre
 
 5. **Wide variety of endpoints**
 
-    There are about 37 endpoints and we are going to add many more in the future.
+    There are about 44 endpoints and we are going to add many more in the future.
 
 6. **CORS enabled**
 
