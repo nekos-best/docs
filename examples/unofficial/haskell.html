@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Go - nekos.best API</title>
+        <title>Haskell - nekos.best API</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="../../api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="../../api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="../../examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../../examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/c++.html"><strong aria-hidden="true">5.3.</strong> C++</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/dart.html"><strong aria-hidden="true">5.4.</strong> Dart</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/go.html" class="active"><strong aria-hidden="true">5.5.</strong> Go</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/haskell.html"><strong aria-hidden="true">5.6.</strong> Haskell</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/rust.html"><strong aria-hidden="true">5.7.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="../../legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="../../legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="../../api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="../../api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="../../examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../../examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/c++.html"><strong aria-hidden="true">5.3.</strong> C++</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/dart.html"><strong aria-hidden="true">5.4.</strong> Dart</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/go.html"><strong aria-hidden="true">5.5.</strong> Go</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/haskell.html" class="active"><strong aria-hidden="true">5.6.</strong> Haskell</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/rust.html"><strong aria-hidden="true">5.7.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="../../legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="../../legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,108 +140,59 @@
 
                 <div id="content" class="content">
                     <main>
-                        <!-- markdownlint-disable MD014 -->
-<h1 id="go"><a class="header" href="#go"><a href="https://nekos.best/discord?ref=docs"><img src="https://cdn.discordapp.com/emojis/1128611804596158574.webp?size=24&amp;quality=lossless" alt="CS" /></a> Go</a></h1>
+                        <h1 id="haskell"><a class="header" href="#haskell">Haskell</a></h1>
 <hr />
 <h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<p>Add the module to your project</p>
-<pre><code class="language-bash">$ go get -u github.com/Yakiyo/nekos_best.go
+<p>The <a href="https://hackage.haskell.org/package/nekos-best">nekos-best</a> package is available on Hackage and can be added to the .cabal file</p>
+<pre><code> build-depends:
+    nekos-best ^&gt;= 0.2.0.0,
+    ...
 </code></pre>
 <h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
-<p>Import it in your code</p>
-<pre><code class="language-go">import (
-    nb github.com/Yakiyo/nekos_best.go
-)
+<p>Get a neko image</p>
+<pre><code class="language-haskell">import NekosBest.API (getNbImage)
+import qualified NekosBest.Category as C
+
+main = do
+    res &lt;- getNbImage C.Neko
+    print res
 </code></pre>
-<p>Full reference at <a href="https://pkg.go.dev/github.com/Yakiyo/nekos_best.go">go.pkg.dev</a></p>
-<h3 id="fetch-a-single-entry"><a class="header" href="#fetch-a-single-entry">Fetch a single entry</a></h3>
-<pre><code class="language-go">res, err := nb.Fetch(&quot;neko&quot;)
-if err != nil {
-    // handle err
-}
-fmt.Println(res.Url, res.Artist_name, res.Artist_href)
+<hr />
+<p>For random images use <code>randomNbImage</code> passing a <code>RandomGen</code> value</p>
+<pre><code class="language-haskell">import NekosBest.API (randomNbImage)
+import qualified NekosBest.Category as C
+
+main = do
+    gen &lt;- getStdGen
+    (res, gen') &lt;- randomNbImage gen
+    print res
+
 </code></pre>
-<h3 id="fetch-multiple-entries"><a class="header" href="#fetch-multiple-entries">Fetch multiple entries</a></h3>
-<pre><code class="language-go">res, _ := nb.FetchMany(&quot;baka&quot;, 3)
+<hr />
+<p>Downloading an image</p>
+<pre><code class="language-haskell">import NekosBest.API (getNbImage, downloadNbImage)
+import qualified NekosBest.Category as C
 
-fmt.Println(res[0].Url)
-</code></pre>
-<h3 id="fetch-a-file"><a class="header" href="#fetch-a-file">Fetch a file</a></h3>
-<pre><code class="language-go">import &quot;os&quot;
-
-res, _ := nb.FetchFile(&quot;pat&quot;)
-
-os.WriteFile(&quot;image.png&quot;, res.Data, 0644)
-
-// print associated entry for the image
-fmt.Println(res.Body)
-</code></pre>
-<h3 id="search-for-an-entry"><a class="header" href="#search-for-an-entry">Search for an entry</a></h3>
-<pre><code class="language-go">res, _ := nb.Search(&quot;Gochuumon wa Usagi Desuka??&quot;, &quot;baka&quot;, 3)
-
-fmt.Println(res)
-</code></pre>
-<h3 id="generate-random-category"><a class="header" href="#generate-random-category">Generate random category</a></h3>
-<pre><code class="language-go">cat := nb.RandomCategory()
-</code></pre>
-<h2 id="example-without-the-module"><a class="header" href="#example-without-the-module">Example without the module</a></h2>
-<pre><code class="language-go">package main
-
-import (
-    &quot;fmt&quot;
-    &quot;io&quot;
-    &quot;net/http&quot;
-    &quot;encoding/json&quot;
-)
-
-// Result of an entry for nekos.best api response for 
-// an image endpoint
-type Result struct {
-    Url string
-    Artist_name string
-    Artist_href string
-}
-
-// The entire api response returned
-type Api_Response struct {
-    Results []Result
-}
-
-func main() {
-    res, err := http.Get(&quot;https://nekos.best/api/v2/neko&quot;)
-    if err != nil {
-        fmt.Println(&quot;Error %v&quot;, err)
-        return
-    }
-    // Read body to bytes and defer the close
-    defer res.Body.Close()
-    bytes, err := io.ReadAll(res.Body)
-    if err != nil {
-        fmt.Println(&quot;Error %v&quot;, err)
-        return
-    }
-    // Parse []byte to json
-    response := &amp;Api_Response{}
-    json.Unmarshal(bytes, response)
-    fmt.Println(response.Results[0])
-}
+main = do
+    res &lt;- getNbImage C.Neko
+    mapM_ (\x -&gt; downloadNbImage x &quot;filename&quot;) res
 </code></pre>
 <h2 id="about"><a class="header" href="#about">About</a></h2>
 <blockquote>
-<p>Example added by: <a href="https://github.com/Yakiyo"><strong>Yakiyo</strong></a></p>
-<p>Package source code is available on <a href="https://github.com/Yakiyo/nekos_best.go"><strong>Github</strong></a></p>
-<p><a href="https://pkg.go.dev/github.com/Yakiyo/nekos_best.go"><img src="https://pkg.go.dev/badge/github.com/Yakiyo/nekos_best.go.svg" alt="Go Reference" /></a> <a href="https://github.com/Yakiyo/nekos_best.go"><img src="https://img.shields.io/github/stars/Yakiyo/nekos_best.go?color=yellow&amp;label=Stars&amp;logo=github&amp;style=flat-square" alt="NekosBest" /></a></p>
+<p>Example added by: <a href="https://github.com/xquantxz"><strong>xQuantx</strong></a></p>
+<p>The source code is available at <a href="https://github.com/xquantxz/nekos-best.hs"><strong>GitHub</strong></a></p>
+<p><img src="https://img.shields.io/hackage/v/nekos-best.svg" alt="NekosBest" /> <img src="https://img.shields.io/github/license/xquantxz/nekos-best%2ehs.svg" alt="NekosBest" /> <img src="https://img.shields.io/github/issues/xquantxz/nekos-best%2ehs.svg" alt="NekoBest" /></p>
 </blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../examples/unofficial/dart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../examples/unofficial/go.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../examples/unofficial/haskell.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../examples/unofficial/rust.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -251,11 +202,11 @@ func main() {
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../examples/unofficial/dart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../examples/unofficial/go.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../examples/unofficial/haskell.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../examples/unofficial/rust.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
