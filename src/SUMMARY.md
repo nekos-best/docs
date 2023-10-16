@@ -17,6 +17,7 @@
   - [C++](examples/unofficial/c++.md)
   - [Dart](examples/unofficial/dart.md)
   - [Go](examples/unofficial/go.md)
+  - [Haskell](examples/unofficial/haskell.md)
   - [Rust](examples/unofficial/rust.md)
   <!--             PLEASE ALPHABETICALLY              -->
 
