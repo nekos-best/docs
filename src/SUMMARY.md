@@ -14,7 +14,6 @@
   <!--          ADD YOUR EXAMPLE UNDER HERE          -->
   - [BDFD](examples/unofficial/bdfd.md)
   - [C#](examples/unofficial/csharp.md)
-  - [C++](examples/unofficial/c++.md)
   - [Dart](examples/unofficial/dart.md)
   - [Go](examples/unofficial/go.md)
   - [Haskell](examples/unofficial/haskell.md)
