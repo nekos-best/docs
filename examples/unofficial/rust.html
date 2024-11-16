@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The official nekos.best API documentation.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="../../api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="../../api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="../../examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../../examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/dart.html"><strong aria-hidden="true">5.3.</strong> Dart</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/go.html"><strong aria-hidden="true">5.4.</strong> Go</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/haskell.html"><strong aria-hidden="true">5.5.</strong> Haskell</a></li><li class="chapter-item expanded "><a href="../../examples/unofficial/rust.html" class="active"><strong aria-hidden="true">5.6.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="../../legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="../../legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="examples/unofficial/dart.html"><strong aria-hidden="true">5.3.</strong> Dart</a></li><li class="chapter-item expanded "><a href="examples/unofficial/go.html"><strong aria-hidden="true">5.4.</strong> Go</a></li><li class="chapter-item expanded "><a href="examples/unofficial/haskell.html"><strong aria-hidden="true">5.5.</strong> Haskell</a></li><li class="chapter-item expanded "><a href="examples/unofficial/rust.html"><strong aria-hidden="true">5.6.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -89,7 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -144,20 +144,20 @@
 <hr />
 <h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
 <pre><code class="language-toml">[dependencies]
-nekosbest = &quot;0.20&quot;
+nekosbest = "0.20"
 </code></pre>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let img_url: String = nekosbest::get(nekosbest::Category::Neko).await?.url;
-    println!(&quot;{img_url}&quot;);
+    println!("{img_url}");
     Ok(())
 }</code></pre>
 <p>Or with an amount (amount is capped at 20 by the server):</p>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let images = nekosbest::get_amount(nekosbest::Category::Neko, 20).await?.0;
-    println!(&quot;{images:?}&quot;);
+    println!("{images:?}");
     Ok(())
 }</code></pre>
 <p>Or if you already have a <code>Client</code> that you want to use,
@@ -170,9 +170,9 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
         .details
         .try_into_image()
         .unwrap();
-    println!(&quot;Source: {}&quot;, details.source_url);
-    println!(&quot;Artist: {}&quot;, details.artist_name);
-    println!(&quot;Artist link: {}&quot;, details.artist_href);
+    println!("Source: {}", details.source_url);
+    println!("Artist: {}", details.artist_name);
+    println!("Artist link: {}", details.artist_href);
     Ok(())
 }</code></pre>
 <p>There is another property called <code>details</code>:</p>
@@ -184,9 +184,9 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
         .details
         .try_into_image()
         .unwrap();
-    println!(&quot;Source: {}&quot;, details.source_url);
-    println!(&quot;Artist: {}&quot;, details.artist_name);
-    println!(&quot;Artist link: {}&quot;, details.artist_href);
+    println!("Source: {}", details.source_url);
+    println!("Artist: {}", details.artist_name);
+    println!("Artist link: {}", details.artist_href);
     Ok(())
 }</code></pre>
 <p>For everything else (GIF endpoints):</p>
@@ -197,7 +197,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
         .details
         .try_into_gif()
         .unwrap();
-    println!(&quot;Anime name: {}&quot;, details.anime_name);
+    println!("Anime name: {}", details.anime_name);
     Ok(())
 }</code></pre>
 <p>Or with the <code>strong-types</code> feature, bringing strong types guarantees for details, so no <code>unwrap</code> / <code>expect</code> for the details type:</p>
@@ -208,16 +208,16 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let resp = nekosbest::st_get::&lt;nekosbest::Neko&gt;().await?;
     let details = resp.details();
-    println!(&quot;Artist: {}&quot;, details.artist_name);
-    println!(&quot;Artist link: {}&quot;, details.artist_href);
-    println!(&quot;Source: {}&quot;, details.source_url);
+    println!("Artist: {}", details.artist_name);
+    println!("Artist link: {}", details.artist_href);
+    println!("Source: {}", details.source_url);
     Ok(())
 }</code></pre>
 <p>GIF:</p>
 <pre><code class="language-rust  noplaypen">#[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let details = nekosbest::st_get::&lt;nekosbest::Pat&gt;().await?.details;
-    println!(&quot;Anime name: {}&quot;, details.anime_name);
+    println!("Anime name: {}", details.anime_name);
     Ok(())
 }</code></pre>
 <h2 id="downloading-the-images"><a class="header" href="#downloading-the-images">Downloading the images.</a></h2>
@@ -228,11 +228,11 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     let image = nekosbest::download::download(&amp;resp).await?;
     
     // maybe also save, or just use it directly
-    tokio::task::spawn_blocking(move || image.save(&quot;neko.png&quot;)).await??;
+    tokio::task::spawn_blocking(move || image.save("neko.png")).await??;
 
     // or alternatively, if you just want to save it, without
     // loading the whole image in-memory:
-    nekosbest::download::download_to_file(&amp;resp, &quot;neko.png&quot;).await?;
+    nekosbest::download::download_to_file(&amp;resp, "neko.png").await?;
     Ok(())
 }</code></pre>
 <p>Or directly from a given URL:</p>
@@ -240,17 +240,17 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     // let resp = nekosbest::get(nekosbest::Category::Neko).await?;
     // let url: String = resp.url;
-    let url = &quot;https://nekos.best/api/v2/neko/1efcda2d-d0d3-4e96-9b40-86852374b4bc.png&quot;.to_owned();
+    let url = "https://nekos.best/api/v2/neko/1efcda2d-d0d3-4e96-9b40-86852374b4bc.png".to_owned();
     let image = nekosbest::download::download_from_url(&amp;url).await?;
-    tokio::task::spawn_blocking(move || image.save(&quot;neko.png&quot;)).await??;
+    tokio::task::spawn_blocking(move || image.save("neko.png")).await??;
 
     // or alternatively, if you just want to save it, without
     // loading the whole image in-memory:
-    nekosbest::download::download_from_url_to_file(&amp;url, &quot;neko.png&quot;).await?;
+    nekosbest::download::download_from_url_to_file(&amp;url, "neko.png").await?;
     Ok(())
 }</code></pre>
 <h2 id="blocking-client"><a class="header" href="#blocking-client">Blocking client</a></h2>
-<p>All functions become blocking when used with the &quot;blocking&quot; feature.</p>
+<p>All functions become blocking when used with the "blocking" feature.</p>
 <h2 id="about"><a class="header" href="#about">About</a></h2>
 <blockquote>
 <p>Example added by: <a href="https://github.com/dnbln"><strong>dnbln</strong></a></p>

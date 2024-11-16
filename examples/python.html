@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The official nekos.best API documentation.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="../api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="../api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="../examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../examples/python.html" class="active"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/dart.html"><strong aria-hidden="true">5.3.</strong> Dart</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/go.html"><strong aria-hidden="true">5.4.</strong> Go</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/haskell.html"><strong aria-hidden="true">5.5.</strong> Haskell</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/rust.html"><strong aria-hidden="true">5.6.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="../legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="../legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="examples/unofficial/dart.html"><strong aria-hidden="true">5.3.</strong> Dart</a></li><li class="chapter-item expanded "><a href="examples/unofficial/go.html"><strong aria-hidden="true">5.4.</strong> Go</a></li><li class="chapter-item expanded "><a href="examples/unofficial/haskell.html"><strong aria-hidden="true">5.5.</strong> Haskell</a></li><li class="chapter-item expanded "><a href="examples/unofficial/rust.html"><strong aria-hidden="true">5.6.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -89,7 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -146,9 +146,9 @@
 <h4 id="using-requests"><a class="header" href="#using-requests">Using <code>requests</code></a></h4>
 <pre><code class="language-py">import requests
 
-resp = requests.get(&quot;https://nekos.best/api/v2/neko&quot;)
+resp = requests.get("https://nekos.best/api/v2/neko")
 data = resp.json()
-print(data[&quot;results&quot;][0][&quot;url&quot;])
+print(data["results"][0]["url"])
 
 # https://nekos.best/api/v2/neko/0001.png
 </code></pre>
@@ -156,9 +156,9 @@ print(data[&quot;results&quot;][0][&quot;url&quot;])
 <pre><code class="language-py">import aiohttp
 
 async with aiohttp.ClientSession() as session:
-    async with session.get(&quot;https://nekos.best/api/v2/neko&quot;) as resp:
+    async with session.get("https://nekos.best/api/v2/neko") as resp:
         data = await resp.json()
-        print(data[&quot;results&quot;][0][&quot;url&quot;])
+        print(data["results"][0]["url"])
 
 # https://nekos.best/api/v2/neko/0001.png
 </code></pre>
@@ -180,9 +180,9 @@ async def get_img(type: str, amount: int = 1) -&gt; Union[Result, list[Result]]:
 
 loop = asyncio.get_event_loop()
 
-loop.run_until_complete(get_img(&quot;neko&quot;))
+loop.run_until_complete(get_img("neko"))
 # &lt;Result url=https://nekos.best/api/v2/neko/0356.png artist_href=https://www.pixiv.net/en/users/38378485 artist_name=奥馬 source_url=https://www.pixiv.net/en/artworks/88188062&gt;
-loop.run_until_complete(get_img(&quot;neko&quot;, 2))
+loop.run_until_complete(get_img("neko", 2))
 # [&lt;Result url=https://nekos.best/api/v2/neko/0072.png artist_href=https://www.pixiv.net/en/users/12191 artist_name=こみやひとま source_url=https://www.pixiv.net/en/artworks/66834141&gt;, &lt;Result url=https://nekos.best/api/v2/neko/0215.png artist_href=https://www.pixiv.net/en/users/3684923 artist_name=ひゅらさん source_url=https://www.pixiv.net/en/artworks/79697176&gt;]
 
 </code></pre>

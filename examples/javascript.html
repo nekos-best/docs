@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The official nekos.best API documentation.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="../api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="../api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="../examples/javascript.html" class="active"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/dart.html"><strong aria-hidden="true">5.3.</strong> Dart</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/go.html"><strong aria-hidden="true">5.4.</strong> Go</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/haskell.html"><strong aria-hidden="true">5.5.</strong> Haskell</a></li><li class="chapter-item expanded "><a href="../examples/unofficial/rust.html"><strong aria-hidden="true">5.6.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="../legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="../legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">API</li><li class="chapter-item expanded "><a href="api/reference.html"><strong aria-hidden="true">1.</strong> Reference</a></li><li class="chapter-item expanded "><a href="api/endpoints.html"><strong aria-hidden="true">2.</strong> Endpoints</a></li><li class="chapter-item expanded affix "><li class="part-title">Examples</li><li class="chapter-item expanded "><a href="examples/javascript.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="examples/python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="chapter-item expanded "><a href="examples/unofficial/index.html"><strong aria-hidden="true">5.</strong> Unofficial Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="examples/unofficial/bdfd.html"><strong aria-hidden="true">5.1.</strong> BDFD</a></li><li class="chapter-item expanded "><a href="examples/unofficial/csharp.html"><strong aria-hidden="true">5.2.</strong> C#</a></li><li class="chapter-item expanded "><a href="examples/unofficial/dart.html"><strong aria-hidden="true">5.3.</strong> Dart</a></li><li class="chapter-item expanded "><a href="examples/unofficial/go.html"><strong aria-hidden="true">5.4.</strong> Go</a></li><li class="chapter-item expanded "><a href="examples/unofficial/haskell.html"><strong aria-hidden="true">5.5.</strong> Haskell</a></li><li class="chapter-item expanded "><a href="examples/unofficial/rust.html"><strong aria-hidden="true">5.6.</strong> Rust</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Legal</li><li class="chapter-item expanded "><a href="legal/privacy.html"><strong aria-hidden="true">6.</strong> Privacy Policy</a></li><li class="chapter-item expanded "><a href="legal/terms.html"><strong aria-hidden="true">7.</strong> Terms and Conditions</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -89,7 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -165,50 +165,50 @@ await getNeko()
 <h3 id="installation"><a class="header" href="#installation">Installation</a></h3>
 <p><code>npm install nekos-best.js</code> | <code>yarn add nekos-best.js</code></p>
 <h3 id="usage"><a class="header" href="#usage">Usage</a></h3>
-<pre><code class="language-js">import { Client, fetchRandom } from &quot;nekos-best.js&quot;;
+<pre><code class="language-js">import { Client, fetchRandom } from "nekos-best.js";
 
 // You can use the `fetchRandom()` function to fetch a random neko.
-console.log(await fetchRandom(&quot;neko&quot;)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png' }] }
+console.log(await fetchRandom("neko")); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png' }] }
 
 // Alternatively, you can initialize a new client which offers more features.
 const nekosBest = new Client();
 
 // Such as the `&lt;Client&gt;.fetch()` method.
-console.log(await nekosBest.fetch(&quot;neko&quot;, 1)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png' }] }
-console.log(await nekosBest.fetch(&quot;hug&quot;, 10)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/hug/XXXXXX-XXXXX.gif' }, ···] }
+console.log(await nekosBest.fetch("neko", 1)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png' }] }
+console.log(await nekosBest.fetch("hug", 10)); // { results: [{ artist_href: '···', artist_name: '···', source_url: '···', url: 'https://nekos.best/api/v2/hug/XXXXXX-XXXXX.gif' }, ···] }
 
 // Or the `&lt;Client&gt;.fetchFile()` method to get a single file.
-console.log(await nekosBest.fetchFile(&quot;neko&quot;)); // { artist_href: '···', ···, data: &lt;Buffer&gt; }
+console.log(await nekosBest.fetchFile("neko")); // { artist_href: '···', ···, data: &lt;Buffer&gt; }
 </code></pre>
 <h4 id="build-a-simple-discord-bot-with-discordjs"><a class="header" href="#build-a-simple-discord-bot-with-discordjs">Build a simple Discord Bot with <a href="https://www.npmjs.com/package/discord.js"><code>discord.js</code></a></a></h4>
-<pre><code class="language-js">import { Client as DiscordClient } from &quot;discord.js&quot;;
-import { Client } from &quot;nekos-best.js&quot;;
+<pre><code class="language-js">import { Client as DiscordClient } from "discord.js";
+import { Client } from "nekos-best.js";
 
 const discordClient = new DiscordClient();
 const nekosBest = new Client();
 
-discordClient.on(&quot;messageCreate&quot;, async (message) =&gt; {
+discordClient.on("messageCreate", async (message) =&gt; {
     if (message.author.bot) return;
 
     if (message.content.startsWith('!neko')) {
-        message.channel.send((await nekosBest.fetch(&quot;neko&quot;, 1)).results[0].url);
+        message.channel.send((await nekosBest.fetch("neko", 1)).results[0].url);
     }
 })
 
-discordClient.login(&quot;************************.******.***************************&quot;);
+discordClient.login("************************.******.***************************");
 </code></pre>
 <h2 id="migrate-from-5xx-to-6xx"><a class="header" href="#migrate-from-5xx-to-6xx">Migrate from 5.X.X to 6.X.X</a></h2>
 <p><strong>❗ For the TypeScript users, the type <code>NbEndpointMetadata</code> will be removed in the 7.X.X version due to recent API changes</strong></p>
 <h3 id="clientfetchrandom--clientfetchmultiple-methods-have-been-removed-in-favor-of-the-clientfetchcategory-amount-method"><a class="header" href="#clientfetchrandom--clientfetchmultiple-methods-have-been-removed-in-favor-of-the-clientfetchcategory-amount-method"><code>&lt;Client&gt;.fetchRandom()</code> &amp; <code>&lt;Client&gt;.fetchMultiple()</code> methods have been removed in favor of the <code>&lt;Client&gt;.fetch(category, amount)</code> method</a></h3>
 <pre><code class="language-diff">const nekosBest = new Client();
 
-- nekosBest.fetchRandom(&quot;neko&quot;)
-+ nekosBest.fetch(&quot;neko&quot;, 1)
+- nekosBest.fetchRandom("neko")
++ nekosBest.fetch("neko", 1)
 </code></pre>
 <pre><code class="language-diff">const nekosBest = new Client();
 
-- nekosBest.fetchMultiple(&quot;neko&quot;, 15)
-+ nekosBest.fetch(&quot;neko&quot;, 15)
+- nekosBest.fetchMultiple("neko", 15)
++ nekosBest.fetch("neko", 15)
 </code></pre>
 <h3 id="the-clientinit-method-has-been-removed"><a class="header" href="#the-clientinit-method-has-been-removed">The <code>&lt;Client&gt;.init()</code> method has been removed</a></h3>
 <pre><code class="language-diff">const nekosBest = new Client();
