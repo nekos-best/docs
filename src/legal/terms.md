@@ -84,7 +84,7 @@ Scraping, extracting, or otherwise copying images, GIFs, or other visual media f
 
 ## Prohibition on Use for AI Training and Related Purposes
 
-The use of any images, GIFs, or other visual media from **nekos.best** for training artificial intelligence (AI), machine learning models, or any similar technologies is forbidden. We do not own the images or GIFs displayed on this website mad they are shared for entertainment purposes with credits to their original sources.
+The use of any images, GIFs, or other visual media from **nekos.best** for training artificial intelligence (AI), machine learning models, or any similar technologies is forbidden. We do not own the images or GIFs displayed on this website. They are shared for entertainment purposes with credits to their original sources.
 
 # Severability and Waiver
 
