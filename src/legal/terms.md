@@ -2,7 +2,7 @@
 
 # Terms and Conditions
 
-> Last updated: March 29, 2022
+> Last updated: November 16, 2024
 
 # Interpretation and Definitions
 
@@ -16,7 +16,7 @@ For the purposes of these Terms and Conditions:
 
 - **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
 - **Country** refers to: Virginia, United States
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to nekos.best API.
+- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to nekos.best.
 - **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 - **Service** refers to the Website.
 - **Website** refers to nekos.best API, accessible from <https://nekos.best>
@@ -75,6 +75,16 @@ If You are a European Union consumer, you will benefit from any mandatory provis
 ## United States Legal Compliance
 
 You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.
+
+# Prohibited Uses
+
+## Prohibition on Scraping Images and GIFs
+
+Scraping, extracting, or otherwise copying images, GIFs, or other visual media from **nekos.best** using bots, crawlers, scripts, or similar technologies is strictly forbidden. Violations may result in an immediate IP ban from accessing **nekos.best**.
+
+## Prohibition on Use for AI Training and Related Purposes
+
+The use of any images, GIFs, or other visual media from **nekos.best** for training artificial intelligence (AI), machine learning models, or any similar technologies is forbidden. We do not own the images or GIFs displayed on this website mad they are shared for entertainment purposes with credits to their original sources.
 
 # Severability and Waiver
 
