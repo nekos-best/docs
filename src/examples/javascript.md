@@ -11,7 +11,7 @@ fetch('https://nekos.best/api/v2/neko')
   .then(response => response.json())
   .then(json => console.log(json.results[0].url))
 
-// https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png
+// https://nekos.best/api/v2/neko/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.png
 ```
 
 #### Using `async`
@@ -25,14 +25,14 @@ async function getNeko() {
 
 await getNeko()
 
-// https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png
+// https://nekos.best/api/v2/neko/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.png
 ```
 
-## Using our Wrapper
+## Using our official wrapper
 
 ### Installation
 
-`npm install nekos-best.js` | `yarn add nekos-best.js`
+`npm install nekos-best.js` | `yarn add nekos-best.js` | `pnpm install nekos-best.js`
 
 ### Usage
 

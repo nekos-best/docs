@@ -7,9 +7,8 @@
 The [nekos-best](https://hackage.haskell.org/package/nekos-best) package is available on Hackage and can be added to the .cabal file
 
 ```
- build-depends:
-    nekos-best ^>= 0.2.0.0,
-    ...
+build-depends:
+    nekos-best ^>= 0.2.0.0
 ```
 
 ## Usage

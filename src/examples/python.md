@@ -13,8 +13,7 @@ resp = requests.get("https://nekos.best/api/v2/neko")
 data = resp.json()
 print(data["results"][0]["url"])
 
-# https://nekos.best/api/v2/neko/0001.png
-```
+# https://nekos.best/api/v2/neko/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.png
 
 #### Using `aiohttp` (async)
 
@@ -26,10 +25,10 @@ async with aiohttp.ClientSession() as session:
         data = await resp.json()
         print(data["results"][0]["url"])
 
-# https://nekos.best/api/v2/neko/0001.png
+# https://nekos.best/api/v2/neko/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.png
 ```
 
-## Using our Wrapper
+## Using our official wrapper
 
 ### Installation
 
