@@ -1,0 +1,6 @@
+# NEKOSBEST DOCS
+
+User-agent: *
+Disallow:
+
+Sitemap: https://docs.nekos.best/sitemap.xml

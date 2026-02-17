@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "vitepress-plugin-group-icons": "^1.7.1"
+  },
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.16"
+  },
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  }
+}
