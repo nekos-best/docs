@@ -176,8 +176,5 @@ export default defineConfig({
 
   vite: {
     plugins: [groupIconVitePlugin()],
-    server: {
-      allowedHosts: ["types-beautifully-match-phd.trycloudflare.com"],
-    },
   },
 });
