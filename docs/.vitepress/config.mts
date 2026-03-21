@@ -137,7 +137,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/nekos-best/docs" },
+      { icon: "github", link: "https://github.com/nekos-best/nekos-best-docs" },
       { icon: "discord", link: "https://nekos.best/discord?ref=docs" },
     ],
 

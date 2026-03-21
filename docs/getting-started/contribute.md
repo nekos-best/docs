@@ -15,4 +15,4 @@ Thank you for taking your time to contribute, we really appreciate it.
 - [Adding unofficial libraries](/contribute/unofficial-libraries)
 - Fixing any grammar mistakes
 
-For anything else, please open a [new issue](https://github.com/nekos-best/docs/issues/new?labels=d-issue).
+For anything else, please open a [new issue](https://github.com/nekos-best/nekos-best-docs/issues/new?labels=d-issue).
