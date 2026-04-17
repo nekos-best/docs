@@ -35,26 +35,30 @@ export default defineConfig({
             link: "/getting-started/api-endpoints",
           },
           {
+            text: "API Reference",
+            link: "/getting-started/api-reference",
+          },
+          {
             text: "Frequently Asked Questions",
             link: "/getting-started/faq",
           },
+        ],
+      },
+      {
+        text: "Contribute",
+        link: "/contribute/contribute",
+        items: [
           {
-            text: "Contribute",
-            link: "/getting-started/contribute",
-            items: [
-              {
-                text: "Images & GIFs",
-                link: "/contribute/images-gifs",
-              },
-              {
-                text: "Code Examples",
-                link: "/contribute/code-examples",
-              },
-              {
-                text: "Unofficial Libraries",
-                link: "/contribute/unofficial-libraries",
-              },
-            ],
+            text: "Images & GIFs",
+            link: "/contribute/images-gifs",
+          },
+          {
+            text: "Code Examples",
+            link: "/contribute/code-examples",
+          },
+          {
+            text: "Unofficial Libraries",
+            link: "/contribute/unofficial-libraries",
           },
         ],
       },

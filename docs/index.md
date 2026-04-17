@@ -11,6 +11,9 @@ hero:
     - theme: alt
       text: API Endpoints
       link: /getting-started/api-endpoints
+    - theme: alt
+      text: API Reference
+      link: /getting-started/api-reference
 ---
 
 <div class="home-section">
