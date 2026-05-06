@@ -4,12 +4,6 @@ outline: [2, 3]
 
 # API Reference
 
-## User-Agent
-
-All requests must include a `User-Agent` header. We'd appreciate it if you included your app name, version, and website link in the following format: `APP_NAME/VERSION (WEBSITE_URL)`. For example: `NekoApp/1.0 (https://example.com)`
-
-Please do not use generic strings or spoof browser `User-Agent` values such as `Mozilla/5.0 ...`, unless the request is actually coming from a browser. These are likely to get your requests blocked.
-
 ## Rate Limits
 
 Every response includes the following headers to help you track and respect rate limits:
@@ -26,6 +20,16 @@ Every response includes the following headers to help you track and respect rate
 | ------------- | ---------------------------- |
 | `/search`     | 7 requests per 5 seconds     |
 | `/:category`  | 200 requests per minute      |
+
+
+## User-Agent
+
+All requests must include a `User-Agent` header. We'd appreciate it if you included your app name, version, and website link in the following format: `APP_NAME/VERSION (WEBSITE_URL)`.
+For example: `NekoApp/1.0 (https://example.com)`
+
+Please do not use the example value above, placeholder strings like `test` or `bot`, invalid or nonexistent URLs, generic library defaults, browser strings like `Mozilla/5.0 ...`, or impersonate known crawlers such as `Googlebot` or `Bingbot`. These are likely to get your requests blocked.
+
+If you don't have a website, a link to your bot's invite or discovery page works just as well.
 
 ## Categories
 
