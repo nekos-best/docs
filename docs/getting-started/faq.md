@@ -55,3 +55,6 @@ Listed below are some of the most commonly asked questions.
 >
 > 1. Your IP address, IP range, or Autonomous System (AS) may have been banned due to suspicious activity. To resolve this, please contact us via our [Discord server](https://nekos.best/discord) or email us at **[contact@nekos.best](mailto:contact@nekos.best)**.
 > 2. Since August 2024, all requests must include a `User-Agent` header. Make sure your request sets this header properly.
+
+#### I use a VPN or proxy, but now I cannot make requests anymore.
+> VPNs and proxies are permitted, but come with some important limitations. Their IP addresses are shared across many users, meaning a single bad actor can get an IP banned and affect everyone else using it. Banned VPN/proxy IPs are permanently blocked with no exceptions, and are flagged at a much higher rate than regular IPs. If you rely on one and lose access, unfortunately there is nothing we can do.
