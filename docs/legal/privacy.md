@@ -4,7 +4,7 @@ outline: [2]
 ---
 # Privacy Policy
 
-Last updated: **17.02.2026**
+Last updated: **06.05.2026**
 
 This Privacy Policy explains how **NEKOSBEST** (“we”, “us”, “our”) processes information when you use the **nekos.best website**, the **NEKOSBEST API**, and related documentation.
 
@@ -79,7 +79,6 @@ The following providers are used to operate the service:
 - **Hetzner** – hosting and infrastructure
 - **Cloudflare** – Proxy, CDN and DDoS protection
 - **Umami** – self-hosted, anonymized analytics
-- **Sentry** – error monitoring and diagnostics
 - **GitHub** – hosting of public documentation
 
 Data is not shared with third parties beyond what is required to operate the service.
