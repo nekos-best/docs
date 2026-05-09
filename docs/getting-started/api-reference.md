@@ -23,8 +23,9 @@ Every response includes the following headers to help you track and respect rate
 
 
 ## User-Agent
+
 All requests must include a `User-Agent` header. Please use the following format: `APP_NAME/VERSION (WEBSITE_URL)`. \
-For example: `NekoApp/1.0 (https://nekoapp.example.com)`
+For example: `NekoApp/1.0 (https://example.com)`
 
 Do not spoof browser strings like `Mozilla/5.0 ...` unless the request is actually coming from a browser.
 
