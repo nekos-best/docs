@@ -16,20 +16,21 @@ Every response includes the following headers to help you track and respect rate
 
 ### Limits
 
-| Endpoint      | Limit                        |
-| ------------- | ---------------------------- |
-| `/search`     | 7 requests per 5 seconds     |
-| `/:category`  | 200 requests per minute      |
+| Endpoint      | Limit                                       |
+| ------------- | ------------------------------------------- |
+| `/search`     | 7 requests per 5 seconds                    |
+| `/:category`  | 200 requests per minute (per category)      |
 
 
 ## User-Agent
+All requests must include a `User-Agent` header. Please use the following format: `APP_NAME/VERSION (WEBSITE_URL)`. \
+For example: `NekoApp/1.0 (https://nekoapp.example.com)`
 
-All requests must include a `User-Agent` header. We'd appreciate it if you included your app name, version, and website link in the following format: `APP_NAME/VERSION (WEBSITE_URL)`.
-For example: `NekoApp/1.0 (https://example.com)`
+Do not spoof browser strings like `Mozilla/5.0 ...` unless the request is actually coming from a browser.
 
-Please do not use the example value above, placeholder strings like `test` or `bot`, invalid or nonexistent URLs, generic library defaults, browser strings like `Mozilla/5.0 ...`, or impersonate known crawlers such as `Googlebot` or `Bingbot`. These are likely to get your requests blocked.
+Avoid using library defaults such as `python-requests`, `okhttp`, `axios`, `node`, or `curl`, impersonating known crawlers like `Googlebot` or `Bingbot`, placeholder strings like `test` or `bot`, or the example value above. Any of these are likely to get your requests blocked.
 
-If you don't have a website, a link to your bot's invite or discovery page works just as well.
+The URL doesn't need to be a website. A bot invite link, discovery page, or top.gg (or similar) listing works too.
 
 ## Categories
 
